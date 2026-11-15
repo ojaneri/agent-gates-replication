@@ -1,0 +1,89 @@
+{
+  "run_id": "T04-invoice_CN_r1_20261114T121559",
+  "task": "T04-invoice",
+  "condition": "CN",
+  "rep": 1,
+  "model": "claude-sonnet-5-5",
+  "cli_version": "2.1.325 (Claude Code)",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "max_iters": 3,
+  "started": "2026-11-14T12:15:59",
+  "iterations": [
+    {
+      "iter": 1,
+      "gate_passed": true,
+      "failed_gates": [],
+      "cost_usd": 0.0552173,
+      "turns": 4,
+      "agent_wall_s": 14.1,
+      "cli_is_error": false,
+      "test_commands_attempted": 0,
+      "test_commands_denied": 0,
+      "denials": 0,
+      "cli_subtype": "success"
+    }
+  ],
+  "workdir": "C:\\Users\\anon\\AppData\\Local\\Temp\\agentrun_gn6gpd6o",
+  "delivered": true,
+  "harness_error": null,
+  "total_cost_usd": 0.0552,
+  "rounds": 1,
+  "finished": "2026-11-14T12:16:13",
+  "evaluation": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 25,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": ".........................                                                [100%]\n25 passed in 0.04s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": false,
+    "tests_reject_reference": null,
+    "seeded_faults": [],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": null,
+      "max_crap": 420.0,
+      "mutation_score": null,
+      "survivors": null,
+      "bandit_issues": 0,
+      "would_pass_C2": false
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_previous": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 25,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": ".........................                                                [100%]\n25 passed in 0.04s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": false,
+    "tests_reject_reference": null,
+    "seeded_faults": [],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": null,
+      "max_crap": 20.0,
+      "mutation_score": null,
+      "survivors": null,
+      "bandit_issues": 0,
+      "would_pass_C2": false
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluated_at": "2026-11-14T14:54:25"
+}

@@ -1,0 +1,106 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "......................................                                   [100%]\n38 passed in 0.06s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 7.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "can_book",
+          "lineno": 6,
+          "endline": 14,
+          "complexity": 4,
+          "statements": 6,
+          "covered": 6,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_check_arguments",
+          "lineno": 17,
+          "endline": 21,
+          "complexity": 3,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "_within_hours",
+          "lineno": 24,
+          "endline": 25,
+          "complexity": 2,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "_conflicts",
+          "lineno": 28,
+          "endline": 35,
+          "complexity": 4,
+          "statements": 6,
+          "covered": 6,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "merge_intervals",
+          "lineno": 38,
+          "endline": 50,
+          "complexity": 7,
+          "statements": 10,
+          "covered": 10,
+          "coverage": 1.0,
+          "crap": 7.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 41,
+      "killed": 39,
+      "survived": 2,
+      "score": 0.9512,
+      "survivors": [
+        {
+          "index": 29,
+          "variant": 0,
+          "lineno": 35,
+          "description": "return value -> return None",
+          "code": "return False"
+        },
+        {
+          "index": 272,
+          "variant": 0,
+          "lineno": 46,
+          "description": "> -> >=",
+          "code": "if end > merged[-1][1]:"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

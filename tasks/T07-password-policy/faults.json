@@ -1,0 +1,79 @@
+[
+  {
+    "id": "F01",
+    "class": "boundary",
+    "note": "64 characters rejected",
+    "edits": [
+      {
+        "find": "if not MIN_LEN <= len(password) <= MAX_LEN:",
+        "replace": "if not MIN_LEN <= len(password) < MAX_LEN:"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "rule",
+    "note": "all four classes required",
+    "edits": [
+      {
+        "find": "if _classes(password) < 3:",
+        "replace": "if _classes(password) < 4:"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "rule",
+    "note": "non-ASCII letters counted as letters",
+    "edits": [
+      {
+        "find": "def _is_lower(c: str) -> bool:\n    return \"a\" <= c <= \"z\"",
+        "replace": "def _is_lower(c: str) -> bool:\n    return c.islower()"
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "omission",
+    "note": "short usernames trigger the rule",
+    "edits": [
+      {
+        "find": "if len(username) >= 3 and username.lower() in password.lower():",
+        "replace": "if username.lower() in password.lower():"
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "repeat check case-insensitive",
+    "edits": [
+      {
+        "find": "        out.append(\"REPEAT\")",
+        "replace": "        out.append(\"REPEAT\")\n    elif _has_repeat(password.lower()):\n        out.append(\"REPEAT\")"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "blocklist matches substrings",
+    "edits": [
+      {
+        "find": "if password.lower() in {b.lower() for b in blocklist}:",
+        "replace": "if any(b.lower() in password.lower() for b in blocklist):"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "rule",
+    "note": "username compared case-sensitively",
+    "edits": [
+      {
+        "find": "username.lower() in password.lower()",
+        "replace": "username in password"
+      }
+    ]
+  }
+]

@@ -1,0 +1,171 @@
+{
+  "run_id": "T03-product-search_C2_r2_20261114T121830",
+  "task": "T03-product-search",
+  "condition": "C2",
+  "rep": 2,
+  "model": "claude-sonnet-5-5",
+  "cli_version": "2.1.325 (Claude Code)",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "max_iters": 3,
+  "started": "2026-11-14T12:18:30",
+  "iterations": [
+    {
+      "iter": 1,
+      "gate_passed": true,
+      "failed_gates": [],
+      "cost_usd": 0.0807722,
+      "turns": 7,
+      "agent_wall_s": 23.8,
+      "cli_is_error": false,
+      "test_commands_attempted": 1,
+      "test_commands_denied": 0,
+      "denials": 0,
+      "cli_subtype": "success"
+    }
+  ],
+  "workdir": "C:\\Users\\anon\\AppData\\Local\\Temp\\agentrun_h5pnd0my",
+  "delivered": true,
+  "harness_error": null,
+  "total_cost_usd": 0.0808,
+  "rounds": 1,
+  "finished": "2026-11-14T12:19:00",
+  "evaluation": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 27,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "...........................                                              [100%]\n27 passed in 0.06s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 18,
+      "failed": 0,
+      "tail": "..................                                                       [100%]\n18 passed in 0.05s"
+    },
+    "tests_reject_reference": false,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "security-adjacent",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "security",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": 1.0,
+    "posthoc": {
+      "line_coverage": 1.0,
+      "max_crap": 9.0,
+      "mutation_score": 1.0,
+      "survivors": 0,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 1,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_previous": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 27,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "...........................                                              [100%]\n27 passed in 0.06s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 18,
+      "failed": 0,
+      "tail": "..................                                                       [100%]\n18 passed in 0.05s"
+    },
+    "tests_reject_reference": false,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "security-adjacent",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "security",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": 1.0,
+    "posthoc": {
+      "line_coverage": 1.0,
+      "max_crap": 9.0,
+      "mutation_score": 1.0,
+      "survivors": 0,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 1,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluated_at": "2026-11-14T14:49:45"
+}

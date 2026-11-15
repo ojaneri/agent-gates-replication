@@ -1,0 +1,106 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "....................................................                     [100%]\n52 passed in 0.08s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 7.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_subtotal",
+          "lineno": 14,
+          "endline": 22,
+          "complexity": 7,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 7.0
+        },
+        {
+          "name": "_check_coupon",
+          "lineno": 25,
+          "endline": 33,
+          "complexity": 5,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "_discount",
+          "lineno": 36,
+          "endline": 44,
+          "complexity": 4,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_shipping",
+          "lineno": 47,
+          "endline": 52,
+          "complexity": 3,
+          "statements": 5,
+          "covered": 5,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "order_total",
+          "lineno": 55,
+          "endline": 65,
+          "complexity": 2,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 2.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 39,
+      "killed": 37,
+      "survived": 2,
+      "score": 0.9487,
+      "survivors": [
+        {
+          "index": 456,
+          "variant": 0,
+          "lineno": 39,
+          "description": "0 -> 1",
+          "code": "if not Decimal(0) < value <= HUNDRED:"
+        },
+        {
+          "index": 185,
+          "variant": 0,
+          "lineno": 42,
+          "description": "0 -> 1",
+          "code": "if value <= 0:"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

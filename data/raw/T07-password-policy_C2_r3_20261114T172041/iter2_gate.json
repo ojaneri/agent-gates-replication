@@ -1,0 +1,111 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "........                                                                 [100%]\n8 passed in 0.03s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 4.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_bad_length",
+          "lineno": 6,
+          "endline": 7,
+          "complexity": 1,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 1.0
+        },
+        {
+          "name": "_bad_classes",
+          "lineno": 10,
+          "endline": 16,
+          "complexity": 4,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_bad_username",
+          "lineno": 19,
+          "endline": 20,
+          "complexity": 2,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "_bad_repeat",
+          "lineno": 23,
+          "endline": 26,
+          "complexity": 2,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "_bad_blocklist",
+          "lineno": 30,
+          "endline": 32,
+          "complexity": 2,
+          "statements": 2,
+          "covered": 2,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "_validate",
+          "lineno": 44,
+          "endline": 46,
+          "complexity": 3,
+          "statements": 2,
+          "covered": 2,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "check_password",
+          "lineno": 49,
+          "endline": 52,
+          "complexity": 3,
+          "statements": 2,
+          "covered": 2,
+          "coverage": 1.0,
+          "crap": 3.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 31,
+      "killed": 31,
+      "survived": 0,
+      "score": 1.0,
+      "survivors": []
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

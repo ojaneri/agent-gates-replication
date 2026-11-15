@@ -1,0 +1,15 @@
+{
+  "id": "T08-semver",
+  "domain": "parsing",
+  "difficulty": "extension task (added after (post-run check)",
+  "traps": [
+    "prerelease below release",
+    "numeric vs alphanumeric identifiers",
+    "ASCII order",
+    "fewer identifiers lower",
+    "build ignored",
+    "no leading zeros (core and numeric prerelease)",
+    "strict format"
+  ],
+  "cwe": []
+}

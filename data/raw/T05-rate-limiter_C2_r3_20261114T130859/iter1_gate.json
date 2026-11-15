@@ -1,0 +1,191 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "...........................................................              [100%]\n59 passed in 0.08s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 5.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_is_int",
+          "lineno": 4,
+          "endline": 5,
+          "complexity": 2,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "RateLimiter.__init__",
+          "lineno": 11,
+          "endline": 19,
+          "complexity": 4,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "RateLimiter._check_cost",
+          "lineno": 21,
+          "endline": 23,
+          "complexity": 4,
+          "statements": 2,
+          "covered": 2,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "RateLimiter._advance",
+          "lineno": 25,
+          "endline": 28,
+          "complexity": 3,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "RateLimiter._live",
+          "lineno": 30,
+          "endline": 35,
+          "complexity": 3,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "RateLimiter.allow",
+          "lineno": 37,
+          "endline": 45,
+          "complexity": 3,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "RateLimiter.remaining",
+          "lineno": 47,
+          "endline": 51,
+          "complexity": 2,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "RateLimiter.retry_after",
+          "lineno": 53,
+          "endline": 65,
+          "complexity": 5,
+          "statements": 12,
+          "covered": 12,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "__init__",
+          "lineno": 11,
+          "endline": 19,
+          "complexity": 4,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_check_cost",
+          "lineno": 21,
+          "endline": 23,
+          "complexity": 4,
+          "statements": 2,
+          "covered": 2,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_advance",
+          "lineno": 25,
+          "endline": 28,
+          "complexity": 3,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "_live",
+          "lineno": 30,
+          "endline": 35,
+          "complexity": 3,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "allow",
+          "lineno": 37,
+          "endline": 45,
+          "complexity": 3,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "remaining",
+          "lineno": 47,
+          "endline": 51,
+          "complexity": 2,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "retry_after",
+          "lineno": 53,
+          "endline": 65,
+          "complexity": 5,
+          "statements": 12,
+          "covered": 12,
+          "coverage": 1.0,
+          "crap": 5.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 45,
+      "killed": 45,
+      "survived": 0,
+      "score": 1.0,
+      "survivors": []
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

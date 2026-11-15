@@ -1,0 +1,17 @@
+{
+  "id": "T04-invoice",
+  "domain": "billing",
+  "difficulty": "hard (added after pilot v1 ceiling)",
+  "traps": [
+    "per-line rounding",
+    "bulk threshold inclusive",
+    "bulk only standard",
+    "compounded discounts",
+    "credit cap and leftover",
+    "zero-rate key present",
+    "ROUND_HALF_UP",
+    "bool qty",
+    "region checked even when empty"
+  ],
+  "cwe": []
+}

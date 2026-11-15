@@ -1,0 +1,79 @@
+[
+  {
+    "id": "F01",
+    "class": "rule",
+    "note": "numeric prerelease identifiers compared as strings",
+    "edits": [
+      {
+        "find": "            c = _cmp(int(x), int(y))",
+        "replace": "            c = _cmp(x, y)"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "rule",
+    "note": "prerelease ranked above release",
+    "edits": [
+      {
+        "find": "    if pa is None:\n        return 1\n    if pb is None:\n        return -1\n",
+        "replace": "    if pa is None:\n        return -1\n    if pb is None:\n        return 1\n"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "rule",
+    "note": "build metadata not ignored",
+    "edits": [
+      {
+        "find": "    return core, pre",
+        "replace": "    if m.group(\"build\") is not None:\n        pre = (pre or []) + [\"~\" + m.group(\"build\")]\n    return core, pre"
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "validation",
+    "note": "leading zeros accepted in core numbers",
+    "edits": [
+      {
+        "find": "_NUM = r\"(0|[1-9][0-9]*)\"",
+        "replace": "_NUM = r\"([0-9]+)\""
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "longer prerelease ranked lower",
+    "edits": [
+      {
+        "find": "    return _cmp(len(pa), len(pb))",
+        "replace": "    return _cmp(len(pb), len(pa))"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "numeric identifiers ranked above alphanumeric",
+    "edits": [
+      {
+        "find": "        elif xn:\n            c = -1\n        elif yn:\n            c = 1\n",
+        "replace": "        elif xn:\n            c = 1\n        elif yn:\n            c = -1\n"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "validation",
+    "note": "leading zeros accepted in numeric prerelease identifiers",
+    "edits": [
+      {
+        "find": "_PRE_ID = r\"(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)\"",
+        "replace": "_PRE_ID = r\"([0-9]+|[0-9]*[A-Za-z-][0-9A-Za-z-]*)\""
+      }
+    ]
+  }
+]

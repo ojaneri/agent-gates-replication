@@ -1,0 +1,99 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "....................................................                     [100%]\n52 passed in 0.05s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 7.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_parse",
+          "lineno": 11,
+          "endline": 19,
+          "complexity": 4,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_cmp",
+          "lineno": 22,
+          "endline": 23,
+          "complexity": 1,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 1.0
+        },
+        {
+          "name": "_cmp_identifier",
+          "lineno": 26,
+          "endline": 32,
+          "complexity": 5,
+          "statements": 6,
+          "covered": 6,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "_cmp_prerelease",
+          "lineno": 35,
+          "endline": 42,
+          "complexity": 7,
+          "statements": 7,
+          "covered": 7,
+          "coverage": 1.0,
+          "crap": 7.0
+        },
+        {
+          "name": "compare_versions",
+          "lineno": 45,
+          "endline": 51,
+          "complexity": 2,
+          "statements": 5,
+          "covered": 5,
+          "coverage": 1.0,
+          "crap": 2.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 30,
+      "killed": 29,
+      "survived": 1,
+      "score": 0.9667,
+      "survivors": [
+        {
+          "index": 248,
+          "variant": 0,
+          "lineno": 37,
+          "description": "0 -> 1",
+          "code": "return _cmp(len(pb), len(pa)) if not (pa and pb) else 0"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

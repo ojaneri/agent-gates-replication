@@ -1,0 +1,201 @@
+{
+  "wall_s": 22.7,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 10810,
+    "stop_reason": "end_turn",
+    "session_id": "anon-012528",
+    "total_cost_usd": 0.0570338,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 6860,
+      "cache_read_input_tokens": 126418,
+      "output_tokens": 1694,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6860,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 191,
+          "cache_read_input_tokens": 44128,
+          "cache_creation_input_tokens": 1641,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1641
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 1694,
+        "cacheReadInputTokens": 126418,
+        "cacheCreationInputTokens": 6860,
+        "webSearchRequests": 0,
+        "costUSD": 0.0570338,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6860,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 6,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "`add_business_days` is implemented in `solution.py`, and the six tests I wrote in `tests/test_solution.py` pass with `python -m pytest -q tests`. It follows the spec. It validates the types first, rejecting `datetime`, `bool` and `float` values and holidays that aren't plain dates. It then steps day by day, skipping weekends and holidays. `n == 0` returns `start` if it is a business day and otherwise the next one. The tests cover forward and backward moves, zero, holidays (including weekend holidays and generators), and the `TypeError` cases.",
+    "ttft_ms": 3475,
+    "type": "result",
+    "duration_ms": 16179,
+    "uuid": "anon-012529",
+    "ttft_stream_ms": 3170,
+    "time_to_request_ms": 2070,
+    "time_to_request_phases_ms": {
+      "other": 58,
+      "system_prompt": 1000,
+      "resume_other": 1,
+      "process_user_input": 12,
+      "input_attachments": 164,
+      "input_hooks": 2,
+      "conversation_append": 10,
+      "transcript_persist": 285,
+      "tool_pool_refresh": 4,
+      "init_message": 85,
+      "init_frame_send": 46,
+      "engine_pickup": 37,
+      "loop_entry": 23,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 3,
+      "request_announcements": 6,
+      "query_setup": 1,
+      "model_gates": 0,
+      "tool_schema_build": 270,
+      "message_normalization": 2,
+      "client_creation": 3,
+      "request_build": 56
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 457,
+    "time_to_request_cpu_ms": 390,
+    "time_to_request_major_faults": 8919,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 0,
+      "major_faults": 596,
+      "setup_ms": 75,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 55,
+      "ambient_wait_ms": 1,
+      "render_ms": 30,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 268,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 1,
+      "images_ms": 1,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 11,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 20,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 29,
+      "record_attempt_ms": 3,
+      "other_ms": 1,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 3170,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 1694,
+        "cacheReadInputTokens": 126418,
+        "cacheCreationInputTokens": 6860,
+        "webSearchRequests": 0,
+        "costUSD": 0.0570338,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6860,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

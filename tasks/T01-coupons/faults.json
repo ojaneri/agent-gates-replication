@@ -1,0 +1,51 @@
+[
+  {
+    "id": "F01",
+    "class": "boundary",
+    "note": "coupon rejected on its expiry date",
+    "find": "if today > coupon[\"expires\"]:",
+    "replace": "if today >= coupon[\"expires\"]:"
+  },
+  {
+    "id": "F02",
+    "class": "rounding",
+    "note": "banker's rounding instead of half up",
+    "find": "rounding=ROUND_HALF_UP)",
+    "replace": "rounding=\"ROUND_HALF_EVEN\")"
+  },
+  {
+    "id": "F03",
+    "class": "rule",
+    "note": "shipping computed on subtotal before discount",
+    "find": "after >= FREE_SHIPPING_FROM",
+    "replace": "subtotal >= FREE_SHIPPING_FROM"
+  },
+  {
+    "id": "F04",
+    "class": "rule",
+    "note": "fixed discount not capped at subtotal",
+    "find": "return min(value, subtotal)",
+    "replace": "return value"
+  },
+  {
+    "id": "F05",
+    "class": "omission",
+    "note": "used-code check missing",
+    "find": "    if coupon[\"code\"] in used_codes:\n        raise CouponError(\"coupon already used\")\n",
+    "replace": ""
+  },
+  {
+    "id": "F06",
+    "class": "boundary",
+    "note": "subtotal equal to minimum rejected",
+    "find": "if subtotal < coupon[\"min_subtotal\"]:",
+    "replace": "if subtotal <= coupon[\"min_subtotal\"]:"
+  },
+  {
+    "id": "F07",
+    "class": "validation",
+    "note": "zero quantity accepted",
+    "find": "qty < 1:",
+    "replace": "qty < 0:"
+  }
+]

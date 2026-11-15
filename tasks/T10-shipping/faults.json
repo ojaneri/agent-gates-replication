@@ -1,0 +1,79 @@
+[
+  {
+    "id": "F01",
+    "class": "constant",
+    "note": "volumetric divisor 6000",
+    "edits": [
+      {
+        "find": "VOL_DIVISOR = Decimal(\"5000\")",
+        "replace": "VOL_DIVISOR = Decimal(\"6000\")"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "omission",
+    "note": "volumetric weight ignored",
+    "edits": [
+      {
+        "find": "    billable = max(volumetric, weight)",
+        "replace": "    billable = weight"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "rounding",
+    "note": "billable weight rounded to nearest, not up",
+    "edits": [
+      {
+        "find": "to_integral_value(rounding=ROUND_CEILING)",
+        "replace": "to_integral_value(rounding=ROUND_HALF_UP)"
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "boundary",
+    "note": "free shipping requires more than 150",
+    "edits": [
+      {
+        "find": "    if sub >= FREE_FROM and",
+        "replace": "    if sub > FREE_FROM and"
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "free shipping in every zone",
+    "edits": [
+      {
+        "find": "    if sub >= FREE_FROM and zone in FREE_ZONES:",
+        "replace": "    if sub >= FREE_FROM:"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "surcharge multiplied by zone factor",
+    "edits": [
+      {
+        "find": "    fee = OVERSIZE_FEE if",
+        "replace": "    fee = OVERSIZE_FEE * ZONE_FACTOR[zone] if"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "boundary",
+    "note": "side of exactly 120 cm counted as oversize",
+    "edits": [
+      {
+        "find": "max(dims) > OVERSIZE_SIDE",
+        "replace": "max(dims) >= OVERSIZE_SIDE"
+      }
+    ]
+  }
+]

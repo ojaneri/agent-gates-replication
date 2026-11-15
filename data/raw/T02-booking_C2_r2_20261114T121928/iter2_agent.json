@@ -1,0 +1,202 @@
+{
+  "wall_s": 14.3,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 32724,
+    "stop_reason": "end_turn",
+    "session_id": "anon-003265",
+    "total_cost_usd": 0.008940169999999999,
+    "usage": {
+      "input_tokens": 4,
+      "cache_creation_input_tokens": 2203,
+      "cache_read_input_tokens": 101665,
+      "output_tokens": 1669,
+      "output_tokens_details": {
+        "thinking_tokens": 621
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 2203,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 179,
+          "cache_read_input_tokens": 51068,
+          "cache_creation_input_tokens": 1732,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1732
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 6700,
+        "thinkingTokens": 1891,
+        "cacheReadInputTokens": 281077,
+        "cacheCreationInputTokens": 13891,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 13891,
+        "webSearchRequests": 0,
+        "costUSD": 0.008940169999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 3,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I split the high-complexity `can_book` into smaller helpers, which brings its cyclomatic complexity well below 10 so its CRAP score should now fall under 10.0. The new helpers are `_check_arguments`, `_within_hours` and `_conflicts`; `can_book` calls them in the same order as the spec. `python -m pytest -q tests` passes all 38 tests. I could not run the CRAP gate itself, so the new scores are unverified. Each helper is exercised by the existing tests, so their coverage should remain at 100%.",
+    "ttft_ms": 4673,
+    "type": "result",
+    "duration_ms": 13040,
+    "uuid": "anon-003305",
+    "ttft_stream_ms": 1694,
+    "time_to_request_ms": 182,
+    "time_to_request_phases_ms": {
+      "other": 5,
+      "system_prompt": 72,
+      "resume_other": 0,
+      "process_user_input": 2,
+      "input_attachments": 12,
+      "input_hooks": 1,
+      "conversation_append": 1,
+      "transcript_persist": 6,
+      "tool_pool_refresh": 3,
+      "init_message": 28,
+      "init_frame_send": 1,
+      "engine_pickup": 1,
+      "loop_entry": 2,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 2,
+      "request_announcements": 3,
+      "query_setup": 1,
+      "model_gates": 0,
+      "tool_schema_build": 21,
+      "message_normalization": 3,
+      "client_creation": 4,
+      "request_build": 12
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 17,
+    "time_to_request_cpu_ms": 203,
+    "time_to_request_major_faults": 8880,
+    "input_attachments_detail": {
+      "slowest_producer": "changed_files",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 31,
+      "major_faults": 660,
+      "changed_files_reread": 0,
+      "setup_ms": 1,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 7,
+      "ambient_wait_ms": 1,
+      "render_ms": 0,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 18,
+      "after_ms": 0,
+      "other_ms": 1,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 3,
+      "images_ms": 0,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 34,
+      "wire_messages": 14
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 3,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 3,
+      "record_attempt_ms": 3,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 1695,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-haiku-5-5": {
+        "inputTokens": 4,
+        "outputTokens": 1669,
+        "cacheReadInputTokens": 101665,
+        "cacheCreationInputTokens": 2203,
+        "webSearchRequests": 0,
+        "costUSD": 0.0022921499999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 621,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 2203,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

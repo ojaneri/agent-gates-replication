@@ -1,0 +1,79 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": ".............................................................            [100%]\n61 passed in 0.08s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 9.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_read_quoted",
+          "lineno": 1,
+          "endline": 24,
+          "complexity": 8,
+          "statements": 19,
+          "covered": 19,
+          "coverage": 1.0,
+          "crap": 8.0
+        },
+        {
+          "name": "_read_plain",
+          "lineno": 27,
+          "endline": 39,
+          "complexity": 4,
+          "statements": 7,
+          "covered": 7,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "parse_line",
+          "lineno": 42,
+          "endline": 59,
+          "complexity": 9,
+          "statements": 14,
+          "covered": 14,
+          "coverage": 1.0,
+          "crap": 9.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 45,
+      "killed": 44,
+      "survived": 1,
+      "score": 0.9778,
+      "survivors": [
+        {
+          "index": 401,
+          "variant": 0,
+          "lineno": 14,
+          "description": "1 -> 2",
+          "code": "if j + 1 < n and line[j + 1] == '\"':"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,16 @@
+{
+  "id": "T05-rate-limiter",
+  "domain": "infrastructure / stateful",
+  "difficulty": "hard (added after pilot v1 ceiling)",
+  "traps": [
+    "half-open window",
+    "rejected requests not recorded",
+    "cost units",
+    "retry_after with costs",
+    "global monotonic time",
+    "per-client budgets",
+    "cost bounds",
+    "read-only queries"
+  ],
+  "cwe": []
+}

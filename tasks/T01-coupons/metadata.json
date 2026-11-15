@@ -1,0 +1,17 @@
+{
+  "id": "T01-coupons",
+  "domain": "pricing",
+  "traps": [
+    "expiry date inclusive",
+    "minimum subtotal inclusive",
+    "shipping after discount",
+    "fixed discount cap",
+    "ROUND_HALF_UP",
+    "bool is an int in Python"
+  ],
+  "cwe": [],
+  "gate_operator_overlap": [
+    "F01",
+    "F06"
+  ]
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "F01",
+    "class": "boundary",
+    "note": "Saturday treated as a business day",
+    "edits": [
+      {
+        "find": "    return d.weekday() <= FRIDAY and",
+        "replace": "    return d.weekday() <= FRIDAY + 1 and"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "omission",
+    "note": "holidays ignored",
+    "edits": [
+      {
+        "find": "    return d.weekday() <= FRIDAY and d not in holidays",
+        "replace": "    return d.weekday() <= FRIDAY"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "rule",
+    "note": "n == 0 returns start unchanged",
+    "edits": [
+      {
+        "find": "        while not _is_business(d, hol):\n            d += ONE_DAY\n        return d",
+        "replace": "        return d"
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "rule",
+    "note": "negative n moves forward",
+    "edits": [
+      {
+        "find": "    remaining = n\n",
+        "replace": "    remaining = abs(n)\n"
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "off-by-one",
+    "note": "start counted when it is a business day",
+    "edits": [
+      {
+        "find": "    remaining = n\n",
+        "replace": "    remaining = n - (1 if _is_business(start, hol) and n > 0 else 0)\n"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "n == 0 rolls back to the previous business day",
+    "edits": [
+      {
+        "find": "            d += ONE_DAY\n",
+        "replace": "            d -= ONE_DAY\n"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "validation",
+    "note": "bool accepted as n",
+    "edits": [
+      {
+        "find": "    if isinstance(n, bool) or not isinstance(n, int):",
+        "replace": "    if not isinstance(n, int):"
+      }
+    ]
+  }
+]

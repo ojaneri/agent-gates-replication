@@ -1,0 +1,58 @@
+[
+  {
+    "id": "F01",
+    "class": "boundary",
+    "note": "back-to-back booking rejected",
+    "find": "if start < ex_end + buf and",
+    "replace": "if start <= ex_end + buf and"
+  },
+  {
+    "id": "F02",
+    "class": "rule",
+    "note": "buffer only applied after existing bookings",
+    "find": "ex_start < end + buf:",
+    "replace": "ex_start < end:"
+  },
+  {
+    "id": "F03",
+    "class": "boundary",
+    "note": "exactly four hours rejected",
+    "find": "if end - start > MAX_DURATION:",
+    "replace": "if end - start >= MAX_DURATION:"
+  },
+  {
+    "id": "F04",
+    "class": "rule",
+    "note": "closing time checked against start instead of end",
+    "find": "or end.time() > close_time:",
+    "replace": "or start.time() > close_time:"
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "merge does not sort its input",
+    "find": "for s, e in sorted(intervals):",
+    "replace": "for s, e in intervals:"
+  },
+  {
+    "id": "F06",
+    "class": "boundary",
+    "note": "touching intervals not merged",
+    "find": "if out and s <= out[-1][1]:",
+    "replace": "if out and s < out[-1][1]:"
+  },
+  {
+    "id": "F07",
+    "class": "rule",
+    "note": "merged end shrinks for contained interval",
+    "find": "max(out[-1][1], e))",
+    "replace": "e)"
+  },
+  {
+    "id": "F08",
+    "class": "omission",
+    "note": "multi-day booking not rejected",
+    "find": "    if start.date() != end.date():\n        return False\n",
+    "replace": ""
+  }
+]

@@ -1,0 +1,201 @@
+{
+  "wall_s": 49.9,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 42787,
+    "stop_reason": "end_turn",
+    "session_id": "anon-011406",
+    "total_cost_usd": 0.01060416,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 16862,
+      "cache_read_input_tokens": 236726,
+      "output_tokens": 9727,
+      "output_tokens_details": {
+        "thinking_tokens": 4490
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 16862,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 310,
+          "cache_read_input_tokens": 54525,
+          "cache_creation_input_tokens": 1246,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1246
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 9727,
+        "cacheReadInputTokens": 236726,
+        "cacheCreationInputTokens": 16862,
+        "webSearchRequests": 0,
+        "costUSD": 0.01060416,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4490,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 16862,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 8,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I implemented `shipping_cost` in `solution.py` and wrote 51 pytest tests in `tests/test_solution.py`; `python -m pytest -q tests` passes. The function uses exact `Fraction` arithmetic and rounds to cents with `ROUND_HALF_UP` only at the end, so cases like 9.50 × 1.25 = 11.875 come out as 11.88. The billable weight is the larger of actual and volumetric weight, rounded up to the next 0.5 kg. The base charge, zone factor, free-shipping rule, and oversize surcharge follow the spec. Three of my first test expectations were wrong (a 121×10×10 box has a 2.42 kg volumetric weight, which bills at 2.5 kg); I corrected those tests to use thin boxes and left the implementation unchanged. The spec did not cover NaN or infinite inputs, so I chose to reject them with `ValueError`.",
+    "ttft_ms": 2735,
+    "type": "result",
+    "duration_ms": 48645,
+    "uuid": "anon-011407",
+    "ttft_stream_ms": 2534,
+    "time_to_request_ms": 521,
+    "time_to_request_phases_ms": {
+      "other": 7,
+      "system_prompt": 179,
+      "resume_other": 1,
+      "process_user_input": 3,
+      "input_attachments": 22,
+      "input_hooks": 3,
+      "conversation_append": 1,
+      "transcript_persist": 57,
+      "tool_pool_refresh": 11,
+      "init_message": 147,
+      "init_frame_send": 4,
+      "engine_pickup": 1,
+      "loop_entry": 5,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 3,
+      "request_announcements": 16,
+      "query_setup": 1,
+      "model_gates": 1,
+      "tool_schema_build": 27,
+      "message_normalization": 4,
+      "client_creation": 5,
+      "request_build": 21
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 58,
+    "time_to_request_cpu_ms": 532,
+    "time_to_request_major_faults": 9645,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 47,
+      "major_faults": 763,
+      "setup_ms": 5,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 11,
+      "ambient_wait_ms": 1,
+      "render_ms": 2,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 1,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 24,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 3,
+      "images_ms": 0,
+      "post_process_ms": 1,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 12,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 2,
+      "headers_ms": 2,
+      "cache_break_record_ms": 6,
+      "plans_ms": 2,
+      "retry_setup_ms": 1,
+      "sent_build_ms": 3,
+      "record_attempt_ms": 5,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 1,
+      "sent_build_surrogate_scan_ms": 0
+    },
+    "first_content_frame_ms": 2534,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-haiku-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 9727,
+        "cacheReadInputTokens": 236726,
+        "cacheCreationInputTokens": 16862,
+        "webSearchRequests": 0,
+        "costUSD": 0.01060416,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4490,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 16862,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 2,
+  "test_commands_denied": 0,
+  "denials": 0
+}

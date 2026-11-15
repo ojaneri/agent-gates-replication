@@ -1,0 +1,174 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": ".......................                                                  [100%]\n23 passed in 0.04s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": false,
+      "max_crap": 10.0,
+      "over_limit": [
+        {
+          "name": "check_password",
+          "lineno": 28,
+          "endline": 51,
+          "complexity": 10,
+          "statements": 15,
+          "covered": 15,
+          "coverage": 1.0,
+          "crap": 10.0
+        }
+      ],
+      "functions": [
+        {
+          "name": "_has_repeat",
+          "lineno": 1,
+          "endline": 13,
+          "complexity": 4,
+          "statements": 10,
+          "covered": 10,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_class_count",
+          "lineno": 16,
+          "endline": 25,
+          "complexity": 7,
+          "statements": 5,
+          "covered": 5,
+          "coverage": 1.0,
+          "crap": 7.0
+        },
+        {
+          "name": "check_password",
+          "lineno": 28,
+          "endline": 51,
+          "complexity": 10,
+          "statements": 15,
+          "covered": 15,
+          "coverage": 1.0,
+          "crap": 10.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": false,
+      "baseline": "passed",
+      "total": 42,
+      "killed": 29,
+      "survived": 13,
+      "score": 0.6905,
+      "survivors": [
+        {
+          "index": 34,
+          "variant": 0,
+          "lineno": 3,
+          "description": "0 -> 1",
+          "code": "run = 0"
+        },
+        {
+          "index": 9,
+          "variant": 0,
+          "lineno": 13,
+          "description": "return value -> return None",
+          "code": "return False"
+        },
+        {
+          "index": 157,
+          "variant": 0,
+          "lineno": 18,
+          "description": "<= -> <",
+          "code": "has_lower = any(\"a\" <= ch <= \"z\" for ch in password)"
+        },
+        {
+          "index": 157,
+          "variant": 1,
+          "lineno": 18,
+          "description": "<= -> <",
+          "code": "has_lower = any(\"a\" <= ch <= \"z\" for ch in password)"
+        },
+        {
+          "index": 160,
+          "variant": 0,
+          "lineno": 19,
+          "description": "<= -> <",
+          "code": "has_upper = any(\"A\" <= ch <= \"Z\" for ch in password)"
+        },
+        {
+          "index": 160,
+          "variant": 1,
+          "lineno": 19,
+          "description": "<= -> <",
+          "code": "has_upper = any(\"A\" <= ch <= \"Z\" for ch in password)"
+        },
+        {
+          "index": 163,
+          "variant": 0,
+          "lineno": 20,
+          "description": "<= -> <",
+          "code": "has_digit = any(\"0\" <= ch <= \"9\" for ch in password)"
+        },
+        {
+          "index": 163,
+          "variant": 1,
+          "lineno": 20,
+          "description": "<= -> <",
+          "code": "has_digit = any(\"0\" <= ch <= \"9\" for ch in password)"
+        },
+        {
+          "index": 296,
+          "variant": 1,
+          "lineno": 22,
+          "description": "<= -> <",
+          "code": "not ((\"a\" <= ch <= \"z\") or (\"A\" <= ch <= \"Z\") or (\"0\" <= ch <= \"9\"))"
+        },
+        {
+          "index": 297,
+          "variant": 1,
+          "lineno": 22,
+          "description": "<= -> <",
+          "code": "not ((\"a\" <= ch <= \"z\") or (\"A\" <= ch <= \"Z\") or (\"0\" <= ch <= \"9\"))"
+        },
+        {
+          "index": 298,
+          "variant": 0,
+          "lineno": 22,
+          "description": "<= -> <",
+          "code": "not ((\"a\" <= ch <= \"z\") or (\"A\" <= ch <= \"Z\") or (\"0\" <= ch <= \"9\"))"
+        },
+        {
+          "index": 298,
+          "variant": 1,
+          "lineno": 22,
+          "description": "<= -> <",
+          "code": "not ((\"a\" <= ch <= \"z\") or (\"A\" <= ch <= \"Z\") or (\"0\" <= ch <= \"9\"))"
+        },
+        {
+          "index": 59,
+          "variant": 0,
+          "lineno": 30,
+          "description": "or -> and",
+          "code": "if not isinstance(password, str) or not isinstance(username, str):"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": false
+}

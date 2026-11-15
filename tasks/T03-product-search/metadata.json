@@ -1,0 +1,17 @@
+{
+  "id": "T03-product-search",
+  "domain": "data access",
+  "traps": [
+    "SQL injection through ORDER BY",
+    "LIKE wildcard escaping",
+    "stock > 0",
+    "max_price inclusive",
+    "tie-break always id ascending",
+    "limit/offset validation",
+    "bool is an int in Python"
+  ],
+  "cwe": [
+    "CWE-89"
+  ],
+  "gate_operator_overlap": "computed by tasks/validate_tasks.py"
+}

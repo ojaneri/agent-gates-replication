@@ -1,0 +1,90 @@
+[
+  {
+    "id": "F01",
+    "class": "rounding",
+    "note": "net summed from unrounded line values",
+    "edits": [
+      {
+        "find": "        total_net += net\n",
+        "replace": "        total_net += raw\n"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "boundary",
+    "note": "bulk discount from 11 units instead of 10",
+    "edits": [
+      {
+        "find": "qty >= BULK_QTY:",
+        "replace": "qty > BULK_QTY:"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "rule",
+    "note": "bulk discount applied to every category",
+    "edits": [
+      {
+        "find": "if cat == \"standard\" and qty >= BULK_QTY:",
+        "replace": "if qty >= BULK_QTY:"
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "rule",
+    "note": "bulk discount added to the line discount instead of compounded",
+    "edits": [
+      {
+        "find": "factor = factor * (1 - BULK_PCT / 100)",
+        "replace": "factor = factor - BULK_PCT / 100"
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "credit not capped at gross",
+    "edits": [
+      {
+        "find": "used = min(credit, gross)",
+        "replace": "used = credit"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "zero-rate lines left out of tax_by_rate",
+    "edits": [
+      {
+        "find": "        by_rate[rate] = by_rate.get(rate, Decimal(\"0\")) + tax\n",
+        "replace": "        if rate:\n            by_rate[rate] = by_rate.get(rate, Decimal(\"0\")) + tax\n"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "rounding",
+    "note": "banker's rounding",
+    "edits": [
+      {
+        "find": "rounding=ROUND_HALF_UP)",
+        "replace": "rounding=\"ROUND_HALF_EVEN\")"
+      }
+    ]
+  },
+  {
+    "id": "F08",
+    "class": "boundary",
+    "note": "100% discount rejected",
+    "edits": [
+      {
+        "find": "if not (0 <= disc <= 100):",
+        "replace": "if not (0 <= disc < 100):"
+      }
+    ]
+  }
+]

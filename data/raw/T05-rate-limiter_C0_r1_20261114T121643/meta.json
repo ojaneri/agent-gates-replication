@@ -1,0 +1,305 @@
+{
+  "run_id": "T05-rate-limiter_C0_r1_20261114T121643",
+  "task": "T05-rate-limiter",
+  "condition": "C0",
+  "rep": 1,
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.325 (Claude Code)",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "max_iters": 3,
+  "started": "2026-11-14T12:16:43",
+  "iterations": [
+    {
+      "iter": 1,
+      "gate_passed": true,
+      "failed_gates": [],
+      "cost_usd": 0.01043049,
+      "turns": 11,
+      "agent_wall_s": 44.9,
+      "cli_is_error": false,
+      "test_commands_attempted": 2,
+      "test_commands_denied": 0,
+      "denials": 0,
+      "cli_subtype": "success"
+    }
+  ],
+  "workdir": "C:\\Users\\anon\\AppData\\Local\\Temp\\agentrun_1dyxxghs",
+  "delivered": true,
+  "harness_error": null,
+  "total_cost_usd": 0.0104,
+  "rounds": 1,
+  "finished": "2026-11-14T12:17:29",
+  "evaluation": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 24,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "........................                                                 [100%]\n24 passed in 0.05s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 40,
+      "failed": 3,
+      "tail": "self = <solution.RateLimiter object at 0x00000202C347CB30>, limit = 3\nwindow_seconds = None\n\n    def __init__(self, limit: int, window_seconds: float):\n        if not _is_int(limit) or limit < 1:\n            raise ValueError(\"limit must be an integer >= 1\")\n>       if not window_seconds > 0:\nE       TypeError: '>' not supported between instances of 'NoneType' and 'int'\n\nsolution.py:12: TypeError\n=========================== short test summary info ===========================\nFAILED tests/test_solution.py::test_invalid_window[True] - Failed: DID NOT RA...\nFAILED tests/test_solution.py::test_invalid_window[1] - TypeError: '>' not su...\nFAILED tests/test_solution.py::test_invalid_window[None] - TypeError: '>' not...\n3 failed, 40 passed in 0.15s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 0.9836,
+      "max_crap": 6.0,
+      "mutation_score": 0.9808,
+      "survivors": 1,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_previous": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 24,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "........................                                                 [100%]\n24 passed in 0.05s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 40,
+      "failed": 3,
+      "tail": "self = <solution.RateLimiter object at 0x0000017EEC0CCBC0>, limit = 3\nwindow_seconds = None\n\n    def __init__(self, limit: int, window_seconds: float):\n        if not _is_int(limit) or limit < 1:\n            raise ValueError(\"limit must be an integer >= 1\")\n>       if not window_seconds > 0:\nE       TypeError: '>' not supported between instances of 'NoneType' and 'int'\n\nsolution.py:12: TypeError\n=========================== short test summary info ===========================\nFAILED tests/test_solution.py::test_invalid_window[True] - Failed: DID NOT RA...\nFAILED tests/test_solution.py::test_invalid_window[1] - TypeError: '>' not su...\nFAILED tests/test_solution.py::test_invalid_window[None] - TypeError: '>' not...\n3 failed, 40 passed in 0.17s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 0.9836,
+      "max_crap": 6.0,
+      "mutation_score": 0.9808,
+      "survivors": 1,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluated_at": "2026-11-14T15:17:27",
+  "evaluation_original": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 23,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": ".......................                                                  [100%]\n23 passed in 0.08s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 40,
+      "failed": 3,
+      "tail": "self = <solution.RateLimiter object at 0x0000019CA2908B00>, limit = 3\nwindow_seconds = None\n\n    def __init__(self, limit: int, window_seconds: float):\n        if not _is_int(limit) or limit < 1:\n            raise ValueError(\"limit must be an integer >= 1\")\n>       if not window_seconds > 0:\nE       TypeError: '>' not supported between instances of 'NoneType' and 'int'\n\nsolution.py:12: TypeError\n=========================== short test summary info ===========================\nFAILED tests/test_solution.py::test_invalid_window[True] - Failed: DID NOT RA...\nFAILED tests/test_solution.py::test_invalid_window[1] - TypeError: '>' not su...\nFAILED tests/test_solution.py::test_invalid_window[None] - TypeError: '>' not...\n3 failed, 40 passed in 0.25s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 0.9836,
+      "max_crap": 6.0,
+      "mutation_score": 0.9808,
+      "survivors": 1,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_int_inputs": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 24,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "........................                                                 [100%]\n24 passed in 0.05s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 40,
+      "failed": 3,
+      "tail": "self = <solution.RateLimiter object at 0x0000017EEC0CCBC0>, limit = 3\nwindow_seconds = None\n\n    def __init__(self, limit: int, window_seconds: float):\n        if not _is_int(limit) or limit < 1:\n            raise ValueError(\"limit must be an integer >= 1\")\n>       if not window_seconds > 0:\nE       TypeError: '>' not supported between instances of 'NoneType' and 'int'\n\nsolution.py:12: TypeError\n=========================== short test summary info ===========================\nFAILED tests/test_solution.py::test_invalid_window[True] - Failed: DID NOT RA...\nFAILED tests/test_solution.py::test_invalid_window[1] - TypeError: '>' not su...\nFAILED tests/test_solution.py::test_invalid_window[None] - TypeError: '>' not...\n3 failed, 40 passed in 0.17s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 0.9836,
+      "max_crap": 6.0,
+      "mutation_score": 0.9808,
+      "survivors": 1,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  }
+}

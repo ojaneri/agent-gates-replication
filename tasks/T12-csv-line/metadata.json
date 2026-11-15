@@ -1,0 +1,18 @@
+{
+  "id": "T12-csv-line",
+  "domain": "parsing",
+  "difficulty": "extension task (added after (post-run check)",
+  "traps": [
+    "trailing separator",
+    "empty line",
+    "doubled quotes",
+    "separator inside quotes",
+    "line breaks inside quotes",
+    "no trimming",
+    "text after closing quote",
+    "stray quote",
+    "unterminated quote",
+    "separator validation"
+  ],
+  "cwe": []
+}

@@ -1,0 +1,201 @@
+{
+  "wall_s": 45.0,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 39982,
+    "stop_reason": "end_turn",
+    "session_id": "anon-006512",
+    "total_cost_usd": 0.009820920000000002,
+    "usage": {
+      "input_tokens": 8,
+      "cache_creation_input_tokens": 16170,
+      "cache_read_input_tokens": 182512,
+      "output_tokens": 9522,
+      "output_tokens_details": {
+        "thinking_tokens": 3958
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 16170,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 278,
+          "cache_read_input_tokens": 53493,
+          "cache_creation_input_tokens": 1586,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1586
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 9522,
+        "cacheReadInputTokens": 182512,
+        "cacheCreationInputTokens": 16170,
+        "webSearchRequests": 0,
+        "costUSD": 0.009820920000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3958,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 16170,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 6,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I implemented `RateLimiter` in `solution.py` and wrote a 54-test pytest suite in `tests/test_solution.py`; `python -m pytest -q tests` passes with all 54 tests. Each client keeps a list of `(time, cost)` records, and a record counts while `now - t < window_seconds`, so a request exactly one window old is released. `allow` records only when it accepts, while `remaining` and `retry_after` record nothing. `retry_after` walks the client's records oldest-first until enough units would be freed, and returns the time until the last of those expires. Constructor, cost and time checks raise `ValueError` as the spec requires, and a rejected cost does not advance the limiter's clock. I did not run the coverage, CRAP, mutation or bandit gates; the code is small and each branch has a test, but those gates are unverified.",
+    "ttft_ms": 1951,
+    "type": "result",
+    "duration_ms": 44011,
+    "uuid": "anon-006513",
+    "ttft_stream_ms": 1749,
+    "time_to_request_ms": 277,
+    "time_to_request_phases_ms": {
+      "other": 6,
+      "system_prompt": 131,
+      "resume_other": 1,
+      "process_user_input": 3,
+      "input_attachments": 16,
+      "input_hooks": 2,
+      "conversation_append": 1,
+      "transcript_persist": 14,
+      "tool_pool_refresh": 3,
+      "init_message": 21,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 4,
+      "message_prep": 1,
+      "model_config_wait": 0,
+      "autocompact": 2,
+      "request_announcements": 8,
+      "query_setup": 1,
+      "model_gates": 28,
+      "tool_schema_build": 17,
+      "message_normalization": 3,
+      "client_creation": 2,
+      "request_build": 10
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 39,
+    "time_to_request_cpu_ms": 328,
+    "time_to_request_major_faults": 11660,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 2,
+      "cpu_ms": 0,
+      "major_faults": 881,
+      "setup_ms": 4,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 7,
+      "ambient_wait_ms": 2,
+      "render_ms": 1,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 15,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 2,
+      "images_ms": 0,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 1,
+      "messages": 12,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 2,
+      "headers_ms": 0,
+      "cache_break_record_ms": 2,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 2,
+      "record_attempt_ms": 3,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 1750,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-haiku-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 9522,
+        "cacheReadInputTokens": 182512,
+        "cacheCreationInputTokens": 16170,
+        "webSearchRequests": 0,
+        "costUSD": 0.009820920000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3958,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 16170,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

@@ -1,0 +1,238 @@
+{
+  "run_id": "T10-shipping_C2_r2_20261114T164354",
+  "task": "T10-shipping",
+  "condition": "C2",
+  "rep": 2,
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.325 (Claude Code)",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "max_iters": 3,
+  "started": "2026-11-14T16:43:54",
+  "iterations": [
+    {
+      "iter": 1,
+      "gate_passed": true,
+      "failed_gates": [],
+      "cost_usd": 0.01269913,
+      "turns": 6,
+      "agent_wall_s": 72.7,
+      "cli_is_error": false,
+      "test_commands_attempted": 1,
+      "test_commands_denied": 0,
+      "denials": 0,
+      "cli_subtype": "success"
+    }
+  ],
+  "workdir": "C:\\Users\\anon\\AppData\\Local\\Temp\\agentrun_7d90s_3a",
+  "delivered": true,
+  "harness_error": null,
+  "total_cost_usd": 0.0127,
+  "rounds": 1,
+  "finished": "2026-11-14T16:45:15",
+  "evaluation": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 44,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "............................................                             [100%]\n44 passed in 0.05s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 0,
+      "failed": 1,
+      "tail": "=================================== ERRORS ====================================\n___________________ ERROR collecting tests/test_solution.py ___________________\nImportError while importing test module 'C:\\Users\\anon\\AppData\\Local\\Temp\\eval_qa4bkoei\\tests\\test_solution.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n..\\..\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests\\test_solution.py:5: in <module>\n    from solution import _to_decimal, shipping_cost\nE   ImportError: cannot import name '_to_decimal' from 'solution' (C:\\Users\\anon\\AppData\\Local\\Temp\\eval_qa4bkoei\\solution.py)\n=========================== short test summary info ===========================\nERROR tests/test_solution.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.21s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "constant",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rounding",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "boundary",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 1.0,
+      "max_crap": 6.0,
+      "mutation_score": 0.9722,
+      "survivors": 1,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_original": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 41,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": ".........................................                                [100%]\n41 passed in 0.09s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 0,
+      "failed": 1,
+      "tail": "=================================== ERRORS ====================================\n___________________ ERROR collecting tests/test_solution.py ___________________\nImportError while importing test module 'C:\\Users\\anon\\AppData\\Local\\Temp\\eval_bilv4t25\\tests\\test_solution.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n..\\..\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests\\test_solution.py:5: in <module>\n    from solution import _to_decimal, shipping_cost\nE   ImportError: cannot import name '_to_decimal' from 'solution' (C:\\Users\\anon\\AppData\\Local\\Temp\\eval_bilv4t25\\solution.py)\n=========================== short test summary info ===========================\nERROR tests/test_solution.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.24s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "constant",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rounding",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "boundary",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 1.0,
+      "max_crap": 6.0,
+      "mutation_score": 0.9722,
+      "survivors": 1,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_previous": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 41,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": ".........................................                                [100%]\n41 passed in 0.09s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 0,
+      "failed": 1,
+      "tail": "=================================== ERRORS ====================================\n___________________ ERROR collecting tests/test_solution.py ___________________\nImportError while importing test module 'C:\\Users\\anon\\AppData\\Local\\Temp\\eval_bilv4t25\\tests\\test_solution.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n..\\..\\Programs\\Python\\Python312\\Lib\\importlib\\__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\ntests\\test_solution.py:5: in <module>\n    from solution import _to_decimal, shipping_cost\nE   ImportError: cannot import name '_to_decimal' from 'solution' (C:\\Users\\anon\\AppData\\Local\\Temp\\eval_bilv4t25\\solution.py)\n=========================== short test summary info ===========================\nERROR tests/test_solution.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.24s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "constant",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rounding",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "boundary",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 1.0,
+      "max_crap": 6.0,
+      "mutation_score": 0.9722,
+      "survivors": 1,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluated_at": "2026-11-14T17:59:00"
+}

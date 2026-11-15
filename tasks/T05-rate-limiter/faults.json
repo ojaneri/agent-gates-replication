@@ -1,0 +1,79 @@
+[
+  {
+    "id": "F01",
+    "class": "boundary",
+    "note": "request exactly window old still counts",
+    "edits": [
+      {
+        "find": "while log and now - log[0][0] >= self.window:",
+        "replace": "while log and now - log[0][0] > self.window:"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "rule",
+    "note": "rejected requests recorded",
+    "edits": [
+      {
+        "find": "        log = self._entries(client_id, now)\n        if self._used(log) + cost > self.limit:\n            return False\n        log.append((now, cost))\n        return True\n",
+        "replace": "        log = self._entries(client_id, now)\n        ok = self._used(log) + cost <= self.limit\n        log.append((now, cost))\n        return ok\n"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "rule",
+    "note": "budget counts requests, not cost units",
+    "edits": [
+      {
+        "find": "return sum(c for _, c in log)",
+        "replace": "return len(log)"
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "omission",
+    "note": "time going backwards not detected",
+    "edits": [
+      {
+        "find": "        if self._last is not None and now < self._last:\n            raise ValueError(\"time went backwards\")\n",
+        "replace": ""
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "retry_after ignores cost, always uses the oldest request",
+    "edits": [
+      {
+        "find": "        for t, c in log:\n            used -= c\n            if used + cost <= self.limit:\n                return float(t + self.window - now)\n        raise AssertionError(\"unreachable: cost <= limit\")\n",
+        "replace": "        return float(log[0][0] + self.window - now)\n"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "all clients share one budget",
+    "edits": [
+      {
+        "find": "self._log.setdefault(client_id, deque())",
+        "replace": "self._log.setdefault(\"*\", deque())"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "validation",
+    "note": "cost above limit accepted",
+    "edits": [
+      {
+        "find": "        if cost > self.limit:\n            raise ValueError(\"cost exceeds limit\")\n",
+        "replace": ""
+      }
+    ]
+  }
+]

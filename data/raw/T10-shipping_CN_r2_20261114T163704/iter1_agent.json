@@ -1,0 +1,201 @@
+{
+  "wall_s": 15.5,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 11369,
+    "stop_reason": "end_turn",
+    "session_id": "anon-012329",
+    "total_cost_usd": 0.0530698,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 6408,
+      "cache_read_input_tokens": 126458,
+      "output_tokens": 1478,
+      "output_tokens_details": {
+        "thinking_tokens": 150
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6408,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 420,
+          "cache_read_input_tokens": 44329,
+          "cache_creation_input_tokens": 988,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 988
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 1478,
+        "cacheReadInputTokens": 126458,
+        "cacheCreationInputTokens": 6408,
+        "webSearchRequests": 0,
+        "costUSD": 0.0530698,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 150,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6408,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 4,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I implemented `shipping_cost` in `solution.py` following the spec, but I haven't run it or any tests, since shell access wasn't available.\n\n- **Inputs:** each number goes through a helper that rejects `bool` and non-numeric types with `TypeError`. Floats are converted via `str()`. Non-finite values such as NaN or infinity raise `ValueError`, which the spec doesn't mention.\n- **Value checks:** dimensions and weight must be above zero and `subtotal` must be zero or more, otherwise `ValueError`. `zone` must be exactly the `int` 1, 2 or 3, otherwise `ValueError`.\n- **Pricing:** it takes the larger of actual and volumetric weight and rounds up to the next 0.5 kg. The base charge is 8.00 plus 1.50 per further half-kilogram, then multiplied by the zone factor. It is set to 0 if `subtotal` is 150 or more in zone 1 or 2.\n- **Surcharge and rounding:** 12.00 is added when the longest side is over 120 cm, with no zone factor and no free-shipping waiver. The total is rounded once at the end with `ROUND_HALF_UP`, so it comes back as a `Decimal` with two decimal places.",
+    "ttft_ms": 1998,
+    "type": "result",
+    "duration_ms": 14339,
+    "uuid": "anon-012330",
+    "ttft_stream_ms": 1516,
+    "time_to_request_ms": 237,
+    "time_to_request_phases_ms": {
+      "other": 5,
+      "system_prompt": 132,
+      "resume_other": 0,
+      "process_user_input": 2,
+      "input_attachments": 12,
+      "input_hooks": 2,
+      "conversation_append": 0,
+      "transcript_persist": 12,
+      "tool_pool_refresh": 4,
+      "init_message": 20,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 3,
+      "message_prep": 1,
+      "model_config_wait": 0,
+      "autocompact": 2,
+      "request_announcements": 7,
+      "query_setup": 1,
+      "model_gates": 0,
+      "tool_schema_build": 18,
+      "message_normalization": 2,
+      "client_creation": 2,
+      "request_build": 9
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 15,
+    "time_to_request_cpu_ms": 219,
+    "time_to_request_major_faults": 11514,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 16,
+      "major_faults": 700,
+      "setup_ms": 3,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 4,
+      "ambient_wait_ms": 1,
+      "render_ms": 1,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 15,
+      "after_ms": 0,
+      "other_ms": 1,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 2,
+      "images_ms": 0,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 11,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 1,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 2,
+      "record_attempt_ms": 3,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 1516,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 1478,
+        "cacheReadInputTokens": 126458,
+        "cacheCreationInputTokens": 6408,
+        "webSearchRequests": 0,
+        "costUSD": 0.0530698,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 150,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6408,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 0,
+  "test_commands_denied": 0,
+  "denials": 0
+}

@@ -1,0 +1,21 @@
+{
+  "condition": "C1",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": ".........                                                                [100%]\n9 passed in 0.02s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    }
+  },
+  "passed": true
+}

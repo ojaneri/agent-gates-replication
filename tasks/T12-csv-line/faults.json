@@ -1,0 +1,79 @@
+[
+  {
+    "id": "F01",
+    "class": "omission",
+    "note": "doubled quote inside a quoted field not unescaped",
+    "edits": [
+      {
+        "find": "                    if line[i + 1:i + 2] == QUOTE:",
+        "replace": "                    if False:"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "boundary",
+    "note": "trailing separator drops the final empty field",
+    "edits": [
+      {
+        "find": "        if i >= n:\n            return fields",
+        "replace": "        if i >= n - 1:\n            return fields"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "validation",
+    "note": "quote inside an unquoted field accepted",
+    "edits": [
+      {
+        "find": "                if c == QUOTE:\n                    raise ValueError(\"quote inside unquoted field\")\n",
+        "replace": ""
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "validation",
+    "note": "unterminated quoted field accepted",
+    "edits": [
+      {
+        "find": "                    raise ValueError(\"unterminated quoted field\")",
+        "replace": "                    break"
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "validation",
+    "note": "double quote accepted as separator",
+    "edits": [
+      {
+        "find": "    if len(sep) != 1 or sep == QUOTE or sep in LINE_BREAKS:",
+        "replace": "    if len(sep) != 1 or sep in LINE_BREAKS:"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "fields trimmed",
+    "edits": [
+      {
+        "find": "        fields.append(\"\".join(field))",
+        "replace": "        fields.append(\"\".join(field).strip())"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "validation",
+    "note": "text after the closing quote accepted",
+    "edits": [
+      {
+        "find": "            if i < n and line[i] != sep:\n                raise ValueError(\"text after closing quote\")\n",
+        "replace": ""
+      }
+    ]
+  }
+]

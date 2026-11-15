@@ -1,0 +1,914 @@
+[
+  {
+    "task": "T01-coupons",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "note": "coupon rejected on its expiry date",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "> -> >="
+      },
+      {
+        "id": "F02",
+        "class": "rounding",
+        "note": "banker's rounding instead of half up",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "note": "shipping computed on subtotal before discount",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "rule",
+        "note": "fixed discount not capped at subtotal",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "omission",
+        "note": "used-code check missing",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "boundary",
+        "note": "subtotal equal to minimum rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "< -> <="
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "note": "zero quantity accepted",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 33,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T02-booking",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "note": "back-to-back booking rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "< -> <="
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "note": "buffer only applied after existing bookings",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "boundary",
+        "note": "exactly four hours rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "> -> >="
+      },
+      {
+        "id": "F04",
+        "class": "rule",
+        "note": "closing time checked against start instead of end",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "merge does not sort its input",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "boundary",
+        "note": "touching intervals not merged",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "<= -> <"
+      },
+      {
+        "id": "F07",
+        "class": "rule",
+        "note": "merged end shrinks for contained interval",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F08",
+        "class": "omission",
+        "note": "multi-day booking not rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 35,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T03-product-search",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "security-adjacent",
+        "note": "LIKE wildcards in user input not escaped",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "security",
+        "note": "order_by interpolated without whitelist (SQL injection)",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "boundary",
+        "note": "out-of-stock products included",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "note": "max_price exclusive",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "tie-break follows the descending flag",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "case-sensitive substring match",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "note": "limit upper bound not enforced",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 21,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T04-invoice",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "rounding",
+        "note": "net summed from unrounded line values",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "boundary",
+        "note": "bulk discount from 11 units instead of 10",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": ">= -> >"
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "note": "bulk discount applied to every category",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "rule",
+        "note": "bulk discount added to the line discount instead of compounded",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "credit not capped at gross",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "zero-rate lines left out of tax_by_rate",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "rounding",
+        "note": "banker's rounding",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F08",
+        "class": "boundary",
+        "note": "100% discount rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "<= -> <"
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 42,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T05-rate-limiter",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "note": "request exactly window old still counts",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": ">= -> >"
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "note": "rejected requests recorded",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "note": "budget counts requests, not cost units",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "omission",
+        "note": "time going backwards not detected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "retry_after ignores cost, always uses the oldest request",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "all clients share one budget",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "note": "cost above limit accepted",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 43,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T06-safe-extract",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "security",
+        "note": "backslash not treated as a separator",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "security",
+        "note": "drive prefix not rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "security",
+        "note": "'..' above the root clamped instead of rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "security",
+        "note": "NUL character not rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "duplicates compared case-sensitively",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "security",
+        "note": "directory entries skipped before validation",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "rule",
+        "note": "trailing slash of dest not stripped",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F08",
+        "class": "rule",
+        "note": "'.' segments kept",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 12,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T07-password-policy",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "note": "64 characters rejected",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "<= -> <"
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "note": "all four classes required",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "3 -> 4"
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "note": "non-ASCII letters counted as letters",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "omission",
+        "note": "short usernames trigger the rule",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "repeat check case-insensitive",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "blocklist matches substrings",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "rule",
+        "note": "username compared case-sensitively",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 35,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T08-semver",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "rule",
+        "note": "numeric prerelease identifiers compared as strings",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "rule",
+        "note": "prerelease ranked above release",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "note": "build metadata not ignored",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "validation",
+        "note": "leading zeros accepted in core numbers",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "longer prerelease ranked lower",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "numeric identifiers ranked above alphanumeric",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "note": "leading zeros accepted in numeric prerelease identifiers",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 29,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T09-rle",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "note": "runs of three are encoded",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "note": "escape character not doubled in short runs",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "validation",
+        "note": "counts below four accepted",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "validation",
+        "note": "leading zeros accepted",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "validation",
+        "note": "dangling escape at end kept as a literal",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "count limited to one digit",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "note": "missing run character not checked",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 48,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T10-shipping",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "constant",
+        "note": "volumetric divisor 6000",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "note": "volumetric weight ignored",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "rounding",
+        "note": "billable weight rounded to nearest, not up",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "note": "free shipping requires more than 150",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": ">= -> >"
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "note": "free shipping in every zone",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "surcharge multiplied by zone factor",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "boundary",
+        "note": "side of exactly 120 cm counted as oversize",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "> -> >="
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 33,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T11-business-days",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "note": "Saturday treated as a business day",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "note": "holidays ignored",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "rule",
+        "note": "n == 0 returns start unchanged",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "rule",
+        "note": "negative n moves forward",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "off-by-one",
+        "note": "start counted when it is a business day",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "n == 0 rolls back to the previous business day",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": "+ -> -"
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "note": "bool accepted as n",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 29,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  },
+  {
+    "task": "T12-csv-line",
+    "checks": {
+      "reference_passes_oracle": true,
+      "reference_passes_security_gate": true,
+      "every_fault_applies_and_is_detected": true
+    },
+    "faults": [
+      {
+        "id": "F01",
+        "class": "omission",
+        "note": "doubled quote inside a quoted field not unescaped",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F02",
+        "class": "boundary",
+        "note": "trailing separator drops the final empty field",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F03",
+        "class": "validation",
+        "note": "quote inside an unquoted field accepted",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F04",
+        "class": "validation",
+        "note": "unterminated quoted field accepted",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F05",
+        "class": "validation",
+        "note": "double quote accepted as separator",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "note": "fields trimmed",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "note": "text after the closing quote accepted",
+        "applies": true,
+        "detected_by_oracle": true,
+        "same_as_gate_mutant": null
+      }
+    ],
+    "reference_bandit_issues": [],
+    "oracle_strength": {
+      "mutation_score": 1.0,
+      "total": 43,
+      "survived": 0,
+      "survivors": []
+    },
+    "valid": true
+  }
+]

@@ -1,0 +1,45 @@
+# Mutation engine cross-check (gates/mutate.py vs cosmic-ray 8.4.1)
+
+Source: data\pilot_v2
+
+Runs compared: 36. Spearman rho = 0.718 (p = 8.15e-07).
+Mean score: ours 0.920, cosmic-ray 0.926. Mean mutants per run: ours 34.6, cosmic-ray 150.9.
+
+| run_id                                   | task               | condition   | model             |   ours_total |   ours_score |   cr_killed |   cr_survived |   cr_incompetent |   cr_score |
+|:-----------------------------------------|:-------------------|:------------|:------------------|-------------:|-------------:|------------:|--------------:|-----------------:|-----------:|
+| T01-coupons_C0_r1_20261114T114132        | T01-coupons        | C0          | claude-sonnet-5-5 |           35 |       0.8857 |         152 |            13 |                0 |     0.9212 |
+| T01-coupons_C0_r1_20261114T114711        | T01-coupons        | C0          | claude-haiku-5-5  |           33 |       0.9697 |         159 |             3 |                0 |     0.9815 |
+| T01-coupons_C1_r1_20261114T114528        | T01-coupons        | C1          | claude-sonnet-5-5 |           33 |       0.9091 |         154 |            10 |                0 |     0.939  |
+| T01-coupons_C1_r1_20261114T115421        | T01-coupons        | C1          | claude-haiku-5-5  |           34 |       0.9412 |         161 |             3 |                0 |     0.9817 |
+| T01-coupons_C2_r1_20261114T114029        | T01-coupons        | C2          | claude-sonnet-5-5 |           35 |       0.9429 |         150 |             7 |                0 |     0.9554 |
+| T01-coupons_C2_r1_20261114T114603        | T01-coupons        | C2          | claude-haiku-5-5  |           32 |       0.9688 |         145 |             3 |                0 |     0.9797 |
+| T02-booking_C0_r1_20261114T114457        | T02-booking        | C0          | claude-sonnet-5-5 |           40 |       0.85   |         160 |            17 |                0 |     0.904  |
+| T02-booking_C0_r1_20261114T115323        | T02-booking        | C0          | claude-haiku-5-5  |           34 |       1      |         154 |             3 |                0 |     0.9809 |
+| T02-booking_C1_r1_20261114T114425        | T02-booking        | C1          | claude-sonnet-5-5 |           39 |       0.8718 |         160 |            15 |                0 |     0.9143 |
+| T02-booking_C1_r1_20261114T115243        | T02-booking        | C1          | claude-haiku-5-5  |           35 |       1      |         147 |            10 |                0 |     0.9363 |
+| T02-booking_C2_r1_20261114T114211        | T02-booking        | C2          | claude-sonnet-5-5 |           37 |       0.9459 |         153 |             5 |                0 |     0.9684 |
+| T02-booking_C2_r1_20261114T114754        | T02-booking        | C2          | claude-haiku-5-5  |           36 |       1      |         155 |             9 |                0 |     0.9451 |
+| T03-product-search_C0_r1_20261114T114352 | T03-product-search | C0          | claude-sonnet-5-5 |           22 |       0.8182 |          72 |             8 |                0 |     0.9    |
+| T03-product-search_C0_r1_20261114T115137 | T03-product-search | C0          | claude-haiku-5-5  |           23 |       1      |          65 |             4 |                0 |     0.942  |
+| T03-product-search_C1_r1_20261114T114319 | T03-product-search | C1          | claude-sonnet-5-5 |           24 |       0.875  |          73 |             7 |                0 |     0.9125 |
+| T03-product-search_C1_r1_20261114T115039 | T03-product-search | C1          | claude-haiku-5-5  |           20 |       0.95   |          85 |             4 |                0 |     0.9551 |
+| T03-product-search_C2_r1_20261114T113901 | T03-product-search | C2          | claude-sonnet-5-5 |           29 |       1      |         122 |             2 |                0 |     0.9839 |
+| T03-product-search_C2_r1_20261114T114918 | T03-product-search | C2          | claude-haiku-5-5  |           26 |       0.8077 |          80 |            11 |                0 |     0.8791 |
+| T04-invoice_C0_r1_20261114T120059        | T04-invoice        | C0          | claude-haiku-5-5  |           36 |       0.9444 |         187 |            10 |                0 |     0.9492 |
+| T04-invoice_C0_r1_20261114T120800        | T04-invoice        | C0          | claude-sonnet-5-5 |           48 |       0.9583 |         203 |            12 |                0 |     0.9442 |
+| T04-invoice_C0_r2_20261114T120634        | T04-invoice        | C0          | claude-haiku-5-5  |           35 |       1      |         186 |             4 |                0 |     0.9789 |
+| T04-invoice_C0_r2_20261114T121206        | T04-invoice        | C0          | claude-sonnet-5-5 |           41 |       0.9512 |         205 |            13 |                0 |     0.9404 |
+| T04-invoice_C0_r3_20261114T120016        | T04-invoice        | C0          | claude-haiku-5-5  |           36 |       0.9444 |         214 |             8 |                0 |     0.964  |
+| T04-invoice_C0_r3_20261114T120727        | T04-invoice        | C0          | claude-sonnet-5-5 |           37 |       0.973  |         191 |            10 |                0 |     0.9502 |
+| T05-rate-limiter_C0_r1_20261114T120543   | T05-rate-limiter   | C0          | claude-haiku-5-5  |           51 |       0.9412 |         176 |            14 |                0 |     0.9263 |
+| T05-rate-limiter_C0_r1_20261114T121126   | T05-rate-limiter   | C0          | claude-sonnet-5-5 |           51 |       0.8824 |         168 |            15 |                0 |     0.918  |
+| T05-rate-limiter_C0_r2_20261114T120451   | T05-rate-limiter   | C0          | claude-haiku-5-5  |           47 |       0.8936 |         168 |            18 |                0 |     0.9032 |
+| T05-rate-limiter_C0_r2_20261114T121046   | T05-rate-limiter   | C0          | claude-sonnet-5-5 |           46 |       0.8478 |         168 |            12 |                0 |     0.9333 |
+| T05-rate-limiter_C0_r3_20261114T120140   | T05-rate-limiter   | C0          | claude-haiku-5-5  |           49 |       0.8367 |         169 |            38 |                0 |     0.8164 |
+| T05-rate-limiter_C0_r3_20261114T120836   | T05-rate-limiter   | C0          | claude-sonnet-5-5 |           46 |       0.8261 |         165 |            21 |                0 |     0.8871 |
+| T06-safe-extract_C0_r1_20261114T120404   | T06-safe-extract   | C0          | claude-haiku-5-5  |           24 |       0.875  |          62 |            12 |                0 |     0.8378 |
+| T06-safe-extract_C0_r1_20261114T121017   | T06-safe-extract   | C0          | claude-sonnet-5-5 |           27 |       0.8889 |          92 |            13 |                0 |     0.8762 |
+| T06-safe-extract_C0_r2_20261114T120326   | T06-safe-extract   | C0          | claude-haiku-5-5  |           27 |       0.8889 |          87 |            13 |                0 |     0.87   |
+| T06-safe-extract_C0_r2_20261114T120946   | T06-safe-extract   | C0          | claude-sonnet-5-5 |           26 |       0.8846 |          89 |            11 |                0 |     0.89   |
+| T06-safe-extract_C0_r3_20261114T120228   | T06-safe-extract   | C0          | claude-haiku-5-5  |           26 |       0.9615 |          85 |            11 |                0 |     0.8854 |
+| T06-safe-extract_C0_r3_20261114T120915   | T06-safe-extract   | C0          | claude-sonnet-5-5 |           26 |       0.8846 |          90 |            11 |                0 |     0.8911 |

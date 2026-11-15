@@ -1,0 +1,17 @@
+{
+  "id": "T11-business-days",
+  "domain": "calendar",
+  "difficulty": "extension task (added after (post-run check)",
+  "traps": [
+    "start not counted",
+    "weekend start",
+    "holidays",
+    "negative n",
+    "n == 0 rolls forward",
+    "year boundary",
+    "datetime rejected",
+    "bool rejected",
+    "holidays as generator"
+  ],
+  "cwe": []
+}

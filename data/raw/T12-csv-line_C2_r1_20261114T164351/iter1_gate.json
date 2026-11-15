@@ -1,0 +1,93 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "..............................                                           [100%]\n30 passed in 0.03s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 8.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_read_quoted",
+          "lineno": 1,
+          "endline": 16,
+          "complexity": 5,
+          "statements": 15,
+          "covered": 15,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "_read_plain",
+          "lineno": 19,
+          "endline": 26,
+          "complexity": 5,
+          "statements": 7,
+          "covered": 7,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "parse_line",
+          "lineno": 29,
+          "endline": 45,
+          "complexity": 8,
+          "statements": 14,
+          "covered": 14,
+          "coverage": 1.0,
+          "crap": 8.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 41,
+      "killed": 38,
+      "survived": 3,
+      "score": 0.9268,
+      "survivors": [
+        {
+          "index": 88,
+          "variant": 0,
+          "lineno": 6,
+          "description": "< -> <=",
+          "code": "if j < 0:"
+        },
+        {
+          "index": 166,
+          "variant": 0,
+          "lineno": 6,
+          "description": "0 -> 1",
+          "code": "if j < 0:"
+        },
+        {
+          "index": 61,
+          "variant": 0,
+          "lineno": 31,
+          "description": "or -> and",
+          "code": "if not isinstance(line, str) or not isinstance(sep, str):"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

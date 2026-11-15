@@ -1,0 +1,103 @@
+{
+  "run_id": "T09-rle_C2_r2_20261114T172531",
+  "task": "T09-rle",
+  "condition": "C2",
+  "rep": 2,
+  "model": "claude-haiku-5-5",
+  "cli_version": "2.1.325 (Claude Code)",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "max_iters": 3,
+  "started": "2026-11-14T17:25:31",
+  "iterations": [
+    {
+      "iter": 1,
+      "gate_passed": true,
+      "failed_gates": [],
+      "cost_usd": 0.010898389999999999,
+      "turns": 6,
+      "agent_wall_s": 53.4,
+      "cli_is_error": false,
+      "test_commands_attempted": 1,
+      "test_commands_denied": 0,
+      "denials": 0,
+      "cli_subtype": "success"
+    }
+  ],
+  "workdir": "C:\\Users\\anon\\AppData\\Local\\Temp\\agentrun_ciae_7ay",
+  "delivered": true,
+  "harness_error": null,
+  "total_cost_usd": 0.0109,
+  "rounds": 1,
+  "finished": "2026-11-14T17:26:53",
+  "evaluation": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 38,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "......................................                                   [100%]\n38 passed in 0.05s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 80,
+      "failed": 9,
+      "tail": "E        Regex: 'missing character'\nE        Input: 'missing run character'\n\ntests\\test_solution.py:226: AssertionError\n=========================== short test summary info ===========================\nFAILED tests/test_solution.py::test_decode_count_three_is_rejected - Assertio...\nFAILED tests/test_solution.py::test_decode_count_one_is_rejected - AssertionE...\nFAILED tests/test_solution.py::test_decode_trailing_tilde_raises - AssertionE...\nFAILED tests/test_solution.py::test_decode_lone_tilde_raises - AssertionError...\nFAILED tests/test_solution.py::test_decode_tilde_followed_by_letter_raises - ...\nFAILED tests/test_solution.py::test_decode_tilde_followed_by_symbol_raises - ...\nFAILED tests/test_solution.py::test_decode_tilde_followed_by_space_raises - A...\nFAILED tests/test_solution.py::test_decode_missing_character_after_run_marker_raises\nFAILED tests/test_solution.py::test_decode_missing_character_after_multi_digit_count_raises\n9 failed, 80 passed in 0.23s"
+    },
+    "tests_reject_reference": true,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "validation",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "validation",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "validation",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F07",
+        "class": "validation",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": null,
+    "posthoc": {
+      "line_coverage": 1.0,
+      "max_crap": 6.0,
+      "mutation_score": 0.9565,
+      "survivors": 2,
+      "bandit_issues": 0,
+      "would_pass_C2": true
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  }
+}

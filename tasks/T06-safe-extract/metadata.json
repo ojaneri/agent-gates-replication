@@ -1,0 +1,21 @@
+{
+  "id": "T06-safe-extract",
+  "domain": "security / file handling",
+  "difficulty": "hard (added after pilot v1 ceiling)",
+  "traps": [
+    "zip slip",
+    "backslash separator",
+    "drive letters",
+    "'..' above root mid-path",
+    "NUL byte",
+    "directory entries validated",
+    "case-insensitive duplicates",
+    "dotted names are ordinary",
+    "dest normalisation"
+  ],
+  "cwe": [
+    "CWE-22",
+    "CWE-158"
+  ],
+  "note": "bandit has no rule for this logic, so this task measures what the SAST gate cannot see"
+}

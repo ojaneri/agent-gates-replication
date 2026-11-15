@@ -1,0 +1,201 @@
+{
+  "wall_s": 18.6,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 13922,
+    "stop_reason": "end_turn",
+    "session_id": "anon-007466",
+    "total_cost_usd": 0.0655782,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 7709,
+      "cache_read_input_tokens": 126902,
+      "output_tokens": 2204,
+      "output_tokens_details": {
+        "thinking_tokens": 162
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7709,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 293,
+          "cache_read_input_tokens": 44568,
+          "cache_creation_input_tokens": 2050,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2050
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 2204,
+        "cacheReadInputTokens": 126902,
+        "cacheCreationInputTokens": 7709,
+        "webSearchRequests": 0,
+        "costUSD": 0.0655782,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 162,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7709,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 6,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "`plan_extraction` is now implemented in `solution.py`. The 24 tests in `tests/test_solution.py` pass with `python -m pytest -q tests`. I didn't run a coverage report. The tests exercise every branch in `solution.py`, so I expect the 90% gate to pass.\n\nIt follows all seven rules in `spec.md`, including normalisation, the unsafe-path checks and skipping directory entries. A bad `dest` raises `ValueError`. Any unsafe member raises `UnsafePathError`, so the function never returns a partial plan. Duplicate names are detected case-insensitively.\n\nI made two choices where the spec was silent. A drive prefix only counts when the first character is an ASCII letter followed by `:`, so `1:x` is treated as an ordinary name. Duplicate detection only compares file members, so a directory entry never clashes with a file of the same name.",
+    "ttft_ms": 1562,
+    "type": "result",
+    "duration_ms": 17404,
+    "uuid": "anon-007467",
+    "ttft_stream_ms": 1229,
+    "time_to_request_ms": 276,
+    "time_to_request_phases_ms": {
+      "other": 6,
+      "system_prompt": 144,
+      "resume_other": 1,
+      "process_user_input": 2,
+      "input_attachments": 15,
+      "input_hooks": 2,
+      "conversation_append": 1,
+      "transcript_persist": 14,
+      "tool_pool_refresh": 3,
+      "init_message": 21,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 3,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 2,
+      "request_announcements": 8,
+      "query_setup": 1,
+      "model_gates": 9,
+      "tool_schema_build": 21,
+      "message_normalization": 3,
+      "client_creation": 3,
+      "request_build": 12
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 47,
+    "time_to_request_cpu_ms": 360,
+    "time_to_request_major_faults": 11416,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 16,
+      "major_faults": 755,
+      "setup_ms": 4,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 6,
+      "ambient_wait_ms": 1,
+      "render_ms": 1,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 1,
+      "waits_ms": 0,
+      "placement_ms": 2,
+      "render_ms": 18,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 2,
+      "images_ms": 0,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 1,
+      "messages": 11,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 1,
+      "plans_ms": 2,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 2,
+      "record_attempt_ms": 5,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 1230,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 2204,
+        "cacheReadInputTokens": 126902,
+        "cacheCreationInputTokens": 7709,
+        "webSearchRequests": 0,
+        "costUSD": 0.0655782,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 162,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7709,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

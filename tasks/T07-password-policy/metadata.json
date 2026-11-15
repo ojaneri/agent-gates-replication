@@ -1,0 +1,18 @@
+{
+  "id": "T07-password-policy",
+  "domain": "validation",
+  "difficulty": "extension task (added after (post-run check)",
+  "traps": [
+    "length both ends inclusive",
+    "3 of 4 classes",
+    "non-ASCII counts as other",
+    "username length >= 3",
+    "repeat case-sensitive",
+    "blocklist equality only",
+    "fixed output order",
+    "type errors"
+  ],
+  "cwe": [
+    "CWE-521"
+  ]
+}

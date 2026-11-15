@@ -1,0 +1,18 @@
+{
+  "id": "T10-shipping",
+  "domain": "pricing",
+  "difficulty": "extension task (added after (post-run check)",
+  "traps": [
+    "volumetric vs actual weight",
+    "round up to 0.5 kg",
+    "first kilogram flat",
+    "zone factor",
+    "free shipping threshold inclusive",
+    "free shipping zones 1-2 only",
+    "surcharge not multiplied or waived",
+    "strict greater-than for oversize",
+    "HALF_UP only at the end",
+    "bool rejected"
+  ],
+  "cwe": []
+}

@@ -1,0 +1,201 @@
+{
+  "wall_s": 31.4,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 24798,
+    "stop_reason": "end_turn",
+    "session_id": "anon-003100",
+    "total_cost_usd": 0.007585609999999999,
+    "usage": {
+      "input_tokens": 12,
+      "cache_creation_input_tokens": 11880,
+      "cache_read_input_tokens": 278341,
+      "output_tokens": 4850,
+      "output_tokens_details": {
+        "thinking_tokens": 781
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 11880,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 364,
+          "cache_read_input_tokens": 50577,
+          "cache_creation_input_tokens": 212,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 212
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 4850,
+        "cacheReadInputTokens": 278341,
+        "cacheCreationInputTokens": 11880,
+        "webSearchRequests": 0,
+        "costUSD": 0.007585609999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 781,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 11880,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 8,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I implemented both functions in `solution.py` and wrote 38 tests in `tests/test_solution.py`; `python -m pytest -q tests` passes all of them. `can_book` runs its checks in the spec's order, validation first, and conflicts use the buffer rule from the spec (with a zero buffer, back-to-back bookings are allowed). `merge_intervals` validates every interval first, then sorts a copy by start and merges overlapping or touching ones, so the input list is never modified. One test I first wrote had the wrong expectation: 08:00–09:00 and 09:30–10:30 don't touch, so the code was right and I corrected the test. I could not measure line coverage because only the test command was allowed, so the 90% gate is unverified. By reading the code, every branch in `solution.py` is exercised by a test, so I expect it to pass.",
+    "ttft_ms": 1977,
+    "type": "result",
+    "duration_ms": 30217,
+    "uuid": "anon-003101",
+    "ttft_stream_ms": 1764,
+    "time_to_request_ms": 255,
+    "time_to_request_phases_ms": {
+      "other": 6,
+      "system_prompt": 127,
+      "resume_other": 1,
+      "process_user_input": 3,
+      "input_attachments": 15,
+      "input_hooks": 3,
+      "conversation_append": 1,
+      "transcript_persist": 23,
+      "tool_pool_refresh": 4,
+      "init_message": 23,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 3,
+      "message_prep": 0,
+      "model_config_wait": 1,
+      "autocompact": 2,
+      "request_announcements": 6,
+      "query_setup": 1,
+      "model_gates": 1,
+      "tool_schema_build": 18,
+      "message_normalization": 2,
+      "client_creation": 3,
+      "request_build": 9
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 40,
+    "time_to_request_cpu_ms": 375,
+    "time_to_request_major_faults": 11386,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 2,
+      "cpu_ms": 0,
+      "major_faults": 774,
+      "setup_ms": 4,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 5,
+      "ambient_wait_ms": 2,
+      "render_ms": 2,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 16,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 2,
+      "images_ms": 0,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 12,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 1,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 2,
+      "record_attempt_ms": 3,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 1764,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-haiku-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 4850,
+        "cacheReadInputTokens": 278341,
+        "cacheCreationInputTokens": 11880,
+        "webSearchRequests": 0,
+        "costUSD": 0.007585609999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 781,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 11880,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 2,
+  "test_commands_denied": 0,
+  "denials": 0
+}

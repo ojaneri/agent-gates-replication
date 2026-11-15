@@ -1,0 +1,119 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "........................................................................ [ 65%]\n......................................                                   [100%]\n110 passed in 0.14s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 6.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_to_decimal",
+          "lineno": 15,
+          "endline": 27,
+          "complexity": 6,
+          "statements": 10,
+          "covered": 10,
+          "coverage": 1.0,
+          "crap": 6.0
+        },
+        {
+          "name": "_positive",
+          "lineno": 30,
+          "endline": 34,
+          "complexity": 2,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "_non_negative",
+          "lineno": 37,
+          "endline": 41,
+          "complexity": 2,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "_zone_code",
+          "lineno": 44,
+          "endline": 47,
+          "complexity": 4,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_billable_weight",
+          "lineno": 50,
+          "endline": 54,
+          "complexity": 1,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 1.0
+        },
+        {
+          "name": "_base_charge",
+          "lineno": 57,
+          "endline": 59,
+          "complexity": 1,
+          "statements": 2,
+          "covered": 2,
+          "coverage": 1.0,
+          "crap": 1.0
+        },
+        {
+          "name": "shipping_cost",
+          "lineno": 62,
+          "endline": 79,
+          "complexity": 4,
+          "statements": 15,
+          "covered": 15,
+          "coverage": 1.0,
+          "crap": 4.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 36,
+      "killed": 35,
+      "survived": 1,
+      "score": 0.9722,
+      "survivors": [
+        {
+          "index": 250,
+          "variant": 0,
+          "lineno": 65,
+          "description": "60 -> 61",
+          "code": "ctx.prec = 60"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

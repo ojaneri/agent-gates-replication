@@ -1,0 +1,79 @@
+[
+  {
+    "id": "F01",
+    "class": "boundary",
+    "note": "runs of three are encoded",
+    "edits": [
+      {
+        "find": "        if n >= MIN_RUN:",
+        "replace": "        if n >= MIN_RUN - 1:"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "omission",
+    "note": "escape character not doubled in short runs",
+    "edits": [
+      {
+        "find": "out.append((ESC + ESC if c == ESC else c) * n)",
+        "replace": "out.append(c * n)"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "validation",
+    "note": "counts below four accepted",
+    "edits": [
+      {
+        "find": "        if n < MIN_RUN:\n            raise ValueError(\"count below minimum run\")\n",
+        "replace": ""
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "validation",
+    "note": "leading zeros accepted",
+    "edits": [
+      {
+        "find": "        if digits[0] == \"0\":\n            raise ValueError(\"count has leading zeros\")\n",
+        "replace": ""
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "validation",
+    "note": "dangling escape at end kept as a literal",
+    "edits": [
+      {
+        "find": "        if i + 1 >= len(t):\n            raise ValueError(\"dangling escape at end\")\n",
+        "replace": "        if i + 1 >= len(t):\n            out.append(ESC)\n            break\n"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "count limited to one digit",
+    "edits": [
+      {
+        "find": "        k = len(rest) - len(rest.lstrip(DIGITS))\n",
+        "replace": "        k = 1\n"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "validation",
+    "note": "missing run character not checked",
+    "edits": [
+      {
+        "find": "        if j + 1 >= len(t):\n            raise ValueError(\"missing run character\")\n",
+        "replace": ""
+      }
+    ]
+  }
+]

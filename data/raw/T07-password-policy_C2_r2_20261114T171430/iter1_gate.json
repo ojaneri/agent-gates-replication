@@ -1,0 +1,146 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "........                                                                 [100%]\n8 passed in 0.03s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": false,
+      "max_crap": 11.0,
+      "over_limit": [
+        {
+          "name": "check_password",
+          "lineno": 18,
+          "endline": 35,
+          "complexity": 11,
+          "statements": 16,
+          "covered": 16,
+          "coverage": 1.0,
+          "crap": 11.0
+        }
+      ],
+      "functions": [
+        {
+          "name": "_char_class",
+          "lineno": 1,
+          "endline": 8,
+          "complexity": 4,
+          "statements": 7,
+          "covered": 7,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_has_repeat",
+          "lineno": 11,
+          "endline": 14,
+          "complexity": 2,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "check_password",
+          "lineno": 18,
+          "endline": 35,
+          "complexity": 11,
+          "statements": 16,
+          "covered": 16,
+          "coverage": 1.0,
+          "crap": 11.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": false,
+      "baseline": "passed",
+      "total": 39,
+      "killed": 30,
+      "survived": 9,
+      "score": 0.7692,
+      "survivors": [
+        {
+          "index": 27,
+          "variant": 1,
+          "lineno": 2,
+          "description": "<= -> <",
+          "code": "if \"a\" <= ch <= \"z\":"
+        },
+        {
+          "index": 28,
+          "variant": 0,
+          "lineno": 3,
+          "description": "return value -> return None",
+          "code": "return 0"
+        },
+        {
+          "index": 29,
+          "variant": 1,
+          "lineno": 4,
+          "description": "<= -> <",
+          "code": "if \"A\" <= ch <= \"Z\":"
+        },
+        {
+          "index": 30,
+          "variant": 0,
+          "lineno": 5,
+          "description": "return value -> return None",
+          "code": "return 1"
+        },
+        {
+          "index": 31,
+          "variant": 0,
+          "lineno": 6,
+          "description": "<= -> <",
+          "code": "if \"0\" <= ch <= \"9\":"
+        },
+        {
+          "index": 31,
+          "variant": 1,
+          "lineno": 6,
+          "description": "<= -> <",
+          "code": "if \"0\" <= ch <= \"9\":"
+        },
+        {
+          "index": 32,
+          "variant": 0,
+          "lineno": 7,
+          "description": "return value -> return None",
+          "code": "return 2"
+        },
+        {
+          "index": 8,
+          "variant": 0,
+          "lineno": 8,
+          "description": "return value -> return None",
+          "code": "return 3"
+        },
+        {
+          "index": 33,
+          "variant": 0,
+          "lineno": 8,
+          "description": "3 -> 4",
+          "code": "return 3"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": false
+}

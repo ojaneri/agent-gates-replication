@@ -1,0 +1,89 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "..........................                                               [100%]\n26 passed in 0.05s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 6.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_to_decimal",
+          "lineno": 6,
+          "endline": 14,
+          "complexity": 5,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "_billable_units",
+          "lineno": 17,
+          "endline": 20,
+          "complexity": 1,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 1.0
+        },
+        {
+          "name": "_validate",
+          "lineno": 23,
+          "endline": 27,
+          "complexity": 6,
+          "statements": 4,
+          "covered": 4,
+          "coverage": 1.0,
+          "crap": 6.0
+        },
+        {
+          "name": "shipping_cost",
+          "lineno": 30,
+          "endline": 45,
+          "complexity": 5,
+          "statements": 13,
+          "covered": 13,
+          "coverage": 1.0,
+          "crap": 5.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 42,
+      "killed": 41,
+      "survived": 1,
+      "score": 0.9762,
+      "survivors": [
+        {
+          "index": 213,
+          "variant": 0,
+          "lineno": 18,
+          "description": "5000 -> 5001",
+          "code": "volumetric = dims[0] * dims[1] * dims[2] / Decimal(5000)"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

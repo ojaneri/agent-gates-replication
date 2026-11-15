@@ -1,0 +1,90 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "..........................                                               [100%]\n26 passed in 0.05s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": false,
+      "max_crap": 10.0,
+      "over_limit": [
+        {
+          "name": "shipping_cost",
+          "lineno": 21,
+          "endline": 39,
+          "complexity": 10,
+          "statements": 16,
+          "covered": 16,
+          "coverage": 1.0,
+          "crap": 10.0
+        }
+      ],
+      "functions": [
+        {
+          "name": "_to_decimal",
+          "lineno": 6,
+          "endline": 12,
+          "complexity": 4,
+          "statements": 6,
+          "covered": 6,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_billable_half_kgs",
+          "lineno": 15,
+          "endline": 18,
+          "complexity": 1,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 1.0
+        },
+        {
+          "name": "shipping_cost",
+          "lineno": 21,
+          "endline": 39,
+          "complexity": 10,
+          "statements": 16,
+          "covered": 16,
+          "coverage": 1.0,
+          "crap": 10.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 43,
+      "killed": 42,
+      "survived": 1,
+      "score": 0.9767,
+      "survivors": [
+        {
+          "index": 186,
+          "variant": 0,
+          "lineno": 16,
+          "description": "5000 -> 5001",
+          "code": "volumetric = dims[0] * dims[1] * dims[2] / Decimal(5000)"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": false
+}

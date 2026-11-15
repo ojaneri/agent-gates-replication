@@ -1,0 +1,116 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "............................................                             [100%]\n44 passed in 0.06s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 6.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_validate_items",
+          "lineno": 13,
+          "endline": 18,
+          "complexity": 6,
+          "statements": 5,
+          "covered": 5,
+          "coverage": 1.0,
+          "crap": 6.0
+        },
+        {
+          "name": "_subtotal",
+          "lineno": 21,
+          "endline": 22,
+          "complexity": 2,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "_check_coupon_applicable",
+          "lineno": 25,
+          "endline": 34,
+          "complexity": 5,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "_discount",
+          "lineno": 37,
+          "endline": 45,
+          "complexity": 4,
+          "statements": 8,
+          "covered": 8,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_shipping",
+          "lineno": 48,
+          "endline": 53,
+          "complexity": 3,
+          "statements": 5,
+          "covered": 5,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "order_total",
+          "lineno": 56,
+          "endline": 67,
+          "complexity": 2,
+          "statements": 9,
+          "covered": 9,
+          "coverage": 1.0,
+          "crap": 2.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 38,
+      "killed": 36,
+      "survived": 2,
+      "score": 0.9474,
+      "survivors": [
+        {
+          "index": 380,
+          "variant": 0,
+          "lineno": 40,
+          "description": "0 -> 1",
+          "code": "if not 0 < value <= 100:"
+        },
+        {
+          "index": 177,
+          "variant": 0,
+          "lineno": 43,
+          "description": "0 -> 1",
+          "code": "if value <= 0:"
+        }
+      ]
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

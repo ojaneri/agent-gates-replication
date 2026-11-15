@@ -1,0 +1,238 @@
+{
+  "run_id": "T10-shipping_C0_r2_20261114T170640",
+  "task": "T10-shipping",
+  "condition": "C0",
+  "rep": 2,
+  "model": "claude-sonnet-5-5",
+  "cli_version": "2.1.325 (Claude Code)",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "max_iters": 3,
+  "started": "2026-11-14T17:06:40",
+  "iterations": [
+    {
+      "iter": 1,
+      "gate_passed": true,
+      "failed_gates": [],
+      "cost_usd": 0.07168900000000002,
+      "turns": 6,
+      "agent_wall_s": 19.5,
+      "cli_is_error": false,
+      "test_commands_attempted": 1,
+      "test_commands_denied": 0,
+      "denials": 0,
+      "cli_subtype": "success"
+    }
+  ],
+  "workdir": "C:\\Users\\anon\\AppData\\Local\\Temp\\agentrun_69ng2kum",
+  "delivered": true,
+  "harness_error": null,
+  "total_cost_usd": 0.0717,
+  "rounds": 1,
+  "finished": "2026-11-14T17:07:00",
+  "evaluation": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 44,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": "............................................                             [100%]\n44 passed in 0.05s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 9,
+      "failed": 0,
+      "tail": ".........                                                                [100%]\n9 passed in 0.04s"
+    },
+    "tests_reject_reference": false,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "constant",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rounding",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": false
+      },
+      {
+        "id": "F07",
+        "class": "boundary",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": 0.8571,
+    "posthoc": {
+      "line_coverage": 0.96,
+      "max_crap": 14.034,
+      "mutation_score": 0.9038,
+      "survivors": 5,
+      "bandit_issues": 0,
+      "would_pass_C2": false
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_original": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 41,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": ".........................................                                [100%]\n41 passed in 0.06s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 9,
+      "failed": 0,
+      "tail": ".........                                                                [100%]\n9 passed in 0.05s"
+    },
+    "tests_reject_reference": false,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "constant",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rounding",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": false
+      },
+      {
+        "id": "F07",
+        "class": "boundary",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": 0.8571,
+    "posthoc": {
+      "line_coverage": 0.96,
+      "max_crap": 14.034,
+      "mutation_score": 0.9038,
+      "survivors": 5,
+      "bandit_issues": 0,
+      "would_pass_C2": false
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluation_previous": {
+    "oracle": {
+      "all_passed": true,
+      "passed": 41,
+      "failed": 0,
+      "pass_fraction": 1.0,
+      "tail": ".........................................                                [100%]\n41 passed in 0.06s"
+    },
+    "escaped_defect": false,
+    "agent_wrote_tests": true,
+    "agent_tests_on_reference": {
+      "passed": 9,
+      "failed": 0,
+      "tail": ".........                                                                [100%]\n9 passed in 0.05s"
+    },
+    "tests_reject_reference": false,
+    "seeded_faults": [
+      {
+        "id": "F01",
+        "class": "constant",
+        "detected": true
+      },
+      {
+        "id": "F02",
+        "class": "omission",
+        "detected": true
+      },
+      {
+        "id": "F03",
+        "class": "rounding",
+        "detected": true
+      },
+      {
+        "id": "F04",
+        "class": "boundary",
+        "detected": true
+      },
+      {
+        "id": "F05",
+        "class": "rule",
+        "detected": true
+      },
+      {
+        "id": "F06",
+        "class": "rule",
+        "detected": false
+      },
+      {
+        "id": "F07",
+        "class": "boundary",
+        "detected": true
+      }
+    ],
+    "seeded_detection_rate": 0.8571,
+    "posthoc": {
+      "line_coverage": 0.96,
+      "max_crap": 14.034,
+      "mutation_score": 0.9038,
+      "survivors": 5,
+      "bandit_issues": 0,
+      "would_pass_C2": false
+    },
+    "gaming_markers": {
+      "nosec": 0,
+      "pragma_no_cover": 0
+    }
+  },
+  "evaluated_at": "2026-11-14T17:56:19"
+}

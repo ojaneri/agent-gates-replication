@@ -1,0 +1,95 @@
+[
+  {
+    "id": "F01",
+    "class": "security",
+    "cwe": "CWE-22",
+    "note": "backslash not treated as a separator",
+    "edits": [
+      {
+        "find": "    name = member.replace(\"\\\\\", \"/\")\n",
+        "replace": "    name = member\n"
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "security",
+    "cwe": "CWE-22",
+    "note": "drive prefix not rejected",
+    "edits": [
+      {
+        "find": "if name.startswith(\"/\") or _DRIVE.match(name):",
+        "replace": "if name.startswith(\"/\"):"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "security",
+    "cwe": "CWE-22",
+    "note": "'..' above the root clamped instead of rejected",
+    "edits": [
+      {
+        "find": "            if not parts:\n                raise UnsafePathError(\"escapes destination\")\n            parts.pop()\n",
+        "replace": "            if parts:\n                parts.pop()\n"
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "security",
+    "cwe": "CWE-158",
+    "note": "NUL character not rejected",
+    "edits": [
+      {
+        "find": "    if \"\\x00\" in member:\n        raise UnsafePathError(\"NUL character\")\n",
+        "replace": ""
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "duplicates compared case-sensitively",
+    "edits": [
+      {
+        "find": "key = norm.lower()",
+        "replace": "key = norm"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "security",
+    "cwe": "CWE-22",
+    "note": "directory entries skipped before validation",
+    "edits": [
+      {
+        "find": "        norm = _normalize(member)\n        if member.replace(\"\\\\\", \"/\").endswith(\"/\"):\n            continue\n",
+        "replace": "        if member.replace(\"\\\\\", \"/\").endswith(\"/\"):\n            continue\n        norm = _normalize(member)\n"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "rule",
+    "note": "trailing slash of dest not stripped",
+    "edits": [
+      {
+        "find": "base = dest.rstrip(\"/\")",
+        "replace": "base = dest"
+      }
+    ]
+  },
+  {
+    "id": "F08",
+    "class": "rule",
+    "note": "'.' segments kept",
+    "edits": [
+      {
+        "find": "if seg in (\"\", \".\"):",
+        "replace": "if seg == \"\":"
+      }
+    ]
+  }
+]

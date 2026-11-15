@@ -1,0 +1,16 @@
+{
+  "id": "T09-rle",
+  "domain": "encoding",
+  "difficulty": "extension task (added after (post-run check)",
+  "traps": [
+    "run threshold 4",
+    "escape doubled",
+    "maximal runs",
+    "multi-digit counts",
+    "no leading zeros",
+    "escape as run character",
+    "all malformed inputs rejected",
+    "round trip"
+  ],
+  "cwe": []
+}

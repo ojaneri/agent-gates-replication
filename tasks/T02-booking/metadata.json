@@ -1,0 +1,20 @@
+{
+  "id": "T02-booking",
+  "domain": "scheduling",
+  "traps": [
+    "half-open intervals",
+    "buffer on both sides",
+    "4 hours inclusive",
+    "opening/closing inclusive",
+    "multi-day",
+    "merge touching",
+    "merge contained",
+    "input not mutated"
+  ],
+  "cwe": [],
+  "gate_operator_overlap": [
+    "F01",
+    "F03",
+    "F06"
+  ]
+}

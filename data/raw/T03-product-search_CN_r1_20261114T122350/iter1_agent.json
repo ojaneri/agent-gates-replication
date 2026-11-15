@@ -1,0 +1,201 @@
+{
+  "wall_s": 13.1,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 9383,
+    "stop_reason": "end_turn",
+    "session_id": "anon-004677",
+    "total_cost_usd": 0.048968199999999996,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 6140,
+      "cache_read_input_tokens": 126362,
+      "output_tokens": 1176,
+      "output_tokens_details": {
+        "thinking_tokens": 65
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 6140,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 293,
+          "cache_read_input_tokens": 44233,
+          "cache_creation_input_tokens": 816,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 816
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 1176,
+        "cacheReadInputTokens": 126362,
+        "cacheCreationInputTokens": 6140,
+        "webSearchRequests": 0,
+        "costUSD": 0.048968199999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 65,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6140,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 4,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I implemented `search_products` in `solution.py`. I haven't run it or any tests, as instructed.\n\nIt validates `order_by`, `limit` and `offset` first and raises `ValueError` if any is invalid. It then runs a single read-only SELECT that filters on `stock > 0` and the optional `max_price`, and returns dicts with `id`, `name` and `price`.\n\n- **Substring match:** it uses `instr(lower(name), lower(?))`, so `%` and `_` are matched literally and case-folding is ASCII-only. An empty string skips the filter.\n- **Ordering:** the query orders by the chosen column in the chosen direction, then by `id` ascending as the tie-break, and applies `LIMIT` and `OFFSET` after that.\n- **Bool values:** `True` and `False` are rejected as `limit` or `offset` values, since Python treats them as integers.",
+    "ttft_ms": 2039,
+    "type": "result",
+    "duration_ms": 11957,
+    "uuid": "anon-004678",
+    "ttft_stream_ms": 1594,
+    "time_to_request_ms": 237,
+    "time_to_request_phases_ms": {
+      "other": 5,
+      "system_prompt": 125,
+      "resume_other": 0,
+      "process_user_input": 3,
+      "input_attachments": 13,
+      "input_hooks": 2,
+      "conversation_append": 0,
+      "transcript_persist": 19,
+      "tool_pool_refresh": 3,
+      "init_message": 21,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 3,
+      "message_prep": 0,
+      "model_config_wait": 1,
+      "autocompact": 1,
+      "request_announcements": 6,
+      "query_setup": 1,
+      "model_gates": 1,
+      "tool_schema_build": 16,
+      "message_normalization": 2,
+      "client_creation": 3,
+      "request_build": 9
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 15,
+    "time_to_request_cpu_ms": 313,
+    "time_to_request_major_faults": 12293,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 16,
+      "major_faults": 961,
+      "setup_ms": 3,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 5,
+      "ambient_wait_ms": 1,
+      "render_ms": 2,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 14,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 1,
+      "images_ms": 1,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 11,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 1,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 2,
+      "record_attempt_ms": 3,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 1594,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 1176,
+        "cacheReadInputTokens": 126362,
+        "cacheCreationInputTokens": 6140,
+        "webSearchRequests": 0,
+        "costUSD": 0.048968199999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 65,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 6140,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 0,
+  "test_commands_denied": 0,
+  "denials": 0
+}

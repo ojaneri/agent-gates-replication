@@ -1,0 +1,201 @@
+{
+  "wall_s": 17.9,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 12753,
+    "stop_reason": "end_turn",
+    "session_id": "anon-009433",
+    "total_cost_usd": 0.06251580000000001,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 7436,
+      "cache_read_input_tokens": 126698,
+      "output_tokens": 2009,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 7436,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 214,
+          "cache_read_input_tokens": 44408,
+          "cache_creation_input_tokens": 1937,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1937
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 2009,
+        "cacheReadInputTokens": 126698,
+        "cacheCreationInputTokens": 7436,
+        "webSearchRequests": 0,
+        "costUSD": 0.06251580000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7436,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 6,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "`compare_versions` is implemented in `solution.py`, and all 35 tests in `tests/test_solution.py` pass with `python -m pytest -q tests`.\n\nIt checks each version against one strict regex, so anything malformed raises `ValueError`. That covers leading zeros, empty identifiers, missing or extra parts, spaces and non-ASCII characters. Precedence follows the spec: the three numbers are compared numerically, then a version without a prerelease beats one with a prerelease. Prerelease identifiers are compared one by one, and build metadata is ignored. The tests check both argument orders for each comparison, and each invalid string in both positions.",
+    "ttft_ms": 1681,
+    "type": "result",
+    "duration_ms": 16815,
+    "uuid": "anon-009434",
+    "ttft_stream_ms": 1322,
+    "time_to_request_ms": 290,
+    "time_to_request_phases_ms": {
+      "other": 8,
+      "system_prompt": 130,
+      "resume_other": 0,
+      "process_user_input": 3,
+      "input_attachments": 17,
+      "input_hooks": 2,
+      "conversation_append": 1,
+      "transcript_persist": 26,
+      "tool_pool_refresh": 4,
+      "init_message": 25,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 4,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 2,
+      "request_announcements": 10,
+      "query_setup": 1,
+      "model_gates": 1,
+      "tool_schema_build": 29,
+      "message_normalization": 3,
+      "client_creation": 5,
+      "request_build": 14
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 71,
+    "time_to_request_cpu_ms": 516,
+    "time_to_request_major_faults": 11424,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 2,
+      "cpu_ms": 47,
+      "major_faults": 900,
+      "setup_ms": 4,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 7,
+      "ambient_wait_ms": 2,
+      "render_ms": 2,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 1,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 26,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 3,
+      "images_ms": 0,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 11,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 2,
+      "headers_ms": 1,
+      "cache_break_record_ms": 2,
+      "plans_ms": 2,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 3,
+      "record_attempt_ms": 4,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 1,
+      "sent_build_surrogate_scan_ms": 0
+    },
+    "first_content_frame_ms": 1322,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 2009,
+        "cacheReadInputTokens": 126698,
+        "cacheCreationInputTokens": 7436,
+        "webSearchRequests": 0,
+        "costUSD": 0.06251580000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 0,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 7436,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

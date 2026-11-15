@@ -1,0 +1,201 @@
+{
+  "wall_s": 50.0,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 44955,
+    "stop_reason": "end_turn",
+    "session_id": "anon-002264",
+    "total_cost_usd": 0.011009360000000001,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 17327,
+      "cache_read_input_tokens": 238796,
+      "output_tokens": 10310,
+      "output_tokens_details": {
+        "thinking_tokens": 4586
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 17327,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 356,
+          "cache_read_input_tokens": 56030,
+          "cache_creation_input_tokens": 206,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 206
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 10310,
+        "cacheReadInputTokens": 238796,
+        "cacheCreationInputTokens": 17327,
+        "webSearchRequests": 0,
+        "costUSD": 0.011009360000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4586,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 17327,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 9,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I implemented `order_total` in `solution.py` and wrote 44 pytest tests in `tests/test_solution.py`; `python -m pytest -q tests` passes all of them. The implementation follows the spec's rules in order: validate items, compute the subtotal, check coupon validity, apply the discount (percent or fixed, the fixed amount capped at the subtotal), then add shipping based on the post-discount amount, and round the result to cents with ROUND_HALF_UP. The `CouponError` class and the function signature are unchanged, and the work is split into small helper functions to keep each one's complexity low. The tests cover the shipping threshold, expiry and minimum-subtotal boundaries, both coupon kinds, input validation, and rounding at the half-cent boundary. I did not run the coverage, CRAP, mutation, or bandit gates, so their results are unverified. Two spec gaps I resolved myself: I treat a `bool` quantity as invalid, and I check the coupon's validity before its value range. I also made the shipping threshold use the unrounded post-discount amount.",
+    "ttft_ms": 2524,
+    "type": "result",
+    "duration_ms": 49051,
+    "uuid": "anon-002265",
+    "ttft_stream_ms": 2281,
+    "time_to_request_ms": 249,
+    "time_to_request_phases_ms": {
+      "other": 6,
+      "system_prompt": 125,
+      "resume_other": 0,
+      "process_user_input": 2,
+      "input_attachments": 13,
+      "input_hooks": 2,
+      "conversation_append": 0,
+      "transcript_persist": 13,
+      "tool_pool_refresh": 4,
+      "init_message": 29,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 3,
+      "message_prep": 1,
+      "model_config_wait": 0,
+      "autocompact": 2,
+      "request_announcements": 7,
+      "query_setup": 1,
+      "model_gates": 7,
+      "tool_schema_build": 17,
+      "message_normalization": 2,
+      "client_creation": 3,
+      "request_build": 9
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 19,
+    "time_to_request_cpu_ms": 344,
+    "time_to_request_major_faults": 11630,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 0,
+      "major_faults": 759,
+      "setup_ms": 3,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 5,
+      "ambient_wait_ms": 1,
+      "render_ms": 1,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 15,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 2,
+      "images_ms": 0,
+      "post_process_ms": 0,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 12,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 1,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 2,
+      "record_attempt_ms": 3,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 2281,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-haiku-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 10310,
+        "cacheReadInputTokens": 238796,
+        "cacheCreationInputTokens": 17327,
+        "webSearchRequests": 0,
+        "costUSD": 0.011009360000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4586,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 17327,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

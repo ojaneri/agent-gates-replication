@@ -1,0 +1,101 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "........................................................................ [ 83%]\n..............                                                           [100%]\n86 passed in 0.08s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 5.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_check_dest",
+          "lineno": 12,
+          "endline": 16,
+          "complexity": 3,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "_is_drive",
+          "lineno": 19,
+          "endline": 21,
+          "complexity": 3,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "_check_prefix",
+          "lineno": 24,
+          "endline": 31,
+          "complexity": 4,
+          "statements": 6,
+          "covered": 6,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_segments",
+          "lineno": 34,
+          "endline": 46,
+          "complexity": 5,
+          "statements": 10,
+          "covered": 10,
+          "coverage": 1.0,
+          "crap": 5.0
+        },
+        {
+          "name": "_normalise",
+          "lineno": 49,
+          "endline": 55,
+          "complexity": 2,
+          "statements": 5,
+          "covered": 5,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "plan_extraction",
+          "lineno": 58,
+          "endline": 73,
+          "complexity": 4,
+          "statements": 14,
+          "covered": 14,
+          "coverage": 1.0,
+          "crap": 4.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 22,
+      "killed": 22,
+      "survived": 0,
+      "score": 1.0,
+      "survivors": []
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

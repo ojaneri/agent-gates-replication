@@ -1,0 +1,201 @@
+{
+  "wall_s": 53.4,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 48391,
+    "stop_reason": "end_turn",
+    "session_id": "anon-010785",
+    "total_cost_usd": 0.010898389999999999,
+    "usage": {
+      "input_tokens": 10,
+      "cache_creation_input_tokens": 16748,
+      "cache_read_input_tokens": 232629,
+      "output_tokens": 10443,
+      "output_tokens_details": {
+        "thinking_tokens": 5620
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 16748,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 517,
+          "cache_read_input_tokens": 54084,
+          "cache_creation_input_tokens": 1573,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 1573
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-haiku-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 10443,
+        "cacheReadInputTokens": 232629,
+        "cacheCreationInputTokens": 16748,
+        "webSearchRequests": 0,
+        "costUSD": 0.010898389999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5620,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 16748,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 6,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "`solution.py` implements `encode` and `decode` per `spec.md`, and `tests/test_solution.py` has 89 pytest tests, all passing with `python -m pytest -q tests`. `encode` groups runs with `itertools.groupby`. `decode` is split into small helpers, `_read_count` and `_read_run`, so each function's cyclomatic complexity stays well under 10, which keeps CRAP low. Digits are matched as ASCII `0`–`9` only, so Unicode digits are rejected. The tests cover the spec examples, the run-length boundaries (3, 4, 9, 10, 100), every `ValueError` case with its message, and round trips over fixed and seeded random inputs. I could not run coverage, mutation testing, or bandit, since the only permitted shell command was the test run. By reading the code, every line should be executed, and the error-message assertions should catch changes such as `0 <= ...` or `< 4` becoming `<= 4`. Decode does not cap counts, so a crafted input like `~999999999~a` will allocate a very large string; the spec does not mention a limit, so I left it alone.",
+    "ttft_ms": 1992,
+    "type": "result",
+    "duration_ms": 52362,
+    "uuid": "anon-010786",
+    "ttft_stream_ms": 1797,
+    "time_to_request_ms": 304,
+    "time_to_request_phases_ms": {
+      "other": 6,
+      "system_prompt": 121,
+      "resume_other": 1,
+      "process_user_input": 2,
+      "input_attachments": 14,
+      "input_hooks": 2,
+      "conversation_append": 1,
+      "transcript_persist": 12,
+      "tool_pool_refresh": 3,
+      "init_message": 22,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 3,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 1,
+      "request_announcements": 7,
+      "query_setup": 1,
+      "model_gates": 57,
+      "tool_schema_build": 26,
+      "message_normalization": 3,
+      "client_creation": 4,
+      "request_build": 13
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 30,
+    "time_to_request_cpu_ms": 329,
+    "time_to_request_major_faults": 12328,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 2,
+      "cpu_ms": 32,
+      "major_faults": 834,
+      "setup_ms": 3,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 6,
+      "ambient_wait_ms": 1,
+      "render_ms": 1,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 24,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 2,
+      "images_ms": 0,
+      "post_process_ms": 1,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 12,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 2,
+      "headers_ms": 1,
+      "cache_break_record_ms": 2,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 3,
+      "record_attempt_ms": 4,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 1,
+      "sent_build_surrogate_scan_ms": 0
+    },
+    "first_content_frame_ms": 1797,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-haiku-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 10443,
+        "cacheReadInputTokens": 232629,
+        "cacheCreationInputTokens": 16748,
+        "webSearchRequests": 0,
+        "costUSD": 0.010898389999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5620,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 16748,
+        "canonicalModel": "claude-haiku-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

@@ -1,0 +1,8 @@
+# Used by the gate. Replaces the default exclusion list so that
+# "# pragma: no cover" and similar comments do not remove lines from measurement.
+[run]
+branch = False
+
+[report]
+exclude_lines =
+    __GATE_NEVER_MATCHES_ANYTHING__

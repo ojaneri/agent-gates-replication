@@ -1,0 +1,71 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": ".......................................................                  [100%]\n55 passed in 0.08s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 7.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_has_three_classes",
+          "lineno": 9,
+          "endline": 13,
+          "complexity": 4,
+          "statements": 3,
+          "covered": 3,
+          "coverage": 1.0,
+          "crap": 4.0
+        },
+        {
+          "name": "_has_triple_repeat",
+          "lineno": 16,
+          "endline": 20,
+          "complexity": 2,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 2.0
+        },
+        {
+          "name": "check_password",
+          "lineno": 24,
+          "endline": 39,
+          "complexity": 7,
+          "statements": 7,
+          "covered": 7,
+          "coverage": 1.0,
+          "crap": 7.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 29,
+      "killed": 29,
+      "survived": 0,
+      "score": 1.0,
+      "survivors": []
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

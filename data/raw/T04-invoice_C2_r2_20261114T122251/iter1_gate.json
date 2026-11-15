@@ -1,0 +1,81 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "..................                                                       [100%]\n18 passed in 0.02s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 7.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_q",
+          "lineno": 11,
+          "endline": 12,
+          "complexity": 1,
+          "statements": 1,
+          "covered": 1,
+          "coverage": 1.0,
+          "crap": 1.0
+        },
+        {
+          "name": "_validate_line",
+          "lineno": 15,
+          "endline": 24,
+          "complexity": 7,
+          "statements": 9,
+          "covered": 9,
+          "coverage": 1.0,
+          "crap": 7.0
+        },
+        {
+          "name": "_line_net",
+          "lineno": 27,
+          "endline": 32,
+          "complexity": 3,
+          "statements": 5,
+          "covered": 5,
+          "coverage": 1.0,
+          "crap": 3.0
+        },
+        {
+          "name": "invoice_totals",
+          "lineno": 35,
+          "endline": 61,
+          "complexity": 5,
+          "statements": 18,
+          "covered": 18,
+          "coverage": 1.0,
+          "crap": 5.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 35,
+      "killed": 35,
+      "survived": 0,
+      "score": 1.0,
+      "survivors": []
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

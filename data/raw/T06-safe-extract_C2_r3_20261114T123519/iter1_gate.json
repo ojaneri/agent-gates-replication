@@ -1,0 +1,71 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "..................................                                       [100%]\n34 passed in 0.04s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 7.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_check_raw",
+          "lineno": 5,
+          "endline": 11,
+          "complexity": 7,
+          "statements": 6,
+          "covered": 6,
+          "coverage": 1.0,
+          "crap": 7.0
+        },
+        {
+          "name": "_normalise",
+          "lineno": 14,
+          "endline": 28,
+          "complexity": 6,
+          "statements": 13,
+          "covered": 13,
+          "coverage": 1.0,
+          "crap": 6.0
+        },
+        {
+          "name": "plan_extraction",
+          "lineno": 31,
+          "endline": 47,
+          "complexity": 6,
+          "statements": 15,
+          "covered": 15,
+          "coverage": 1.0,
+          "crap": 6.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 21,
+      "killed": 21,
+      "survived": 0,
+      "score": 1.0,
+      "survivors": []
+    },
+    "security": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "passed": true
+}

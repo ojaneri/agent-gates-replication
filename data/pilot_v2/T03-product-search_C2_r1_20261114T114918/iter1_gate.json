@@ -1,0 +1,77 @@
+{
+  "condition": "C2",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": "...............................................                          [100%]\n47 passed in 0.09s"
+    },
+    "coverage": {
+      "passed": true,
+      "line_coverage": 1.0,
+      "missing_lines": []
+    },
+    "crap": {
+      "passed": true,
+      "max_crap": 7.0,
+      "over_limit": [],
+      "functions": [
+        {
+          "name": "_check_int",
+          "lineno": 7,
+          "endline": 14,
+          "complexity": 7,
+          "statements": 7,
+          "covered": 7,
+          "coverage": 1.0,
+          "crap": 7.0
+        },
+        {
+          "name": "search_products",
+          "lineno": 17,
+          "endline": 55,
+          "complexity": 7,
+          "statements": 23,
+          "covered": 23,
+          "coverage": 1.0,
+          "crap": 7.0
+        }
+      ]
+    },
+    "mutation": {
+      "passed": true,
+      "baseline": "passed",
+      "total": 22,
+      "killed": 21,
+      "survived": 1,
+      "score": 0.9545,
+      "survivors": [
+        {
+          "index": 105,
+          "variant": 0,
+          "lineno": 11,
+          "description": "is -> is not",
+          "code": "if maximum is None:"
+        }
+      ]
+    },
+    "security": {
+      "passed": false,
+      "issues": [
+        {
+          "test_id": "B608",
+          "issue_severity": "MEDIUM",
+          "issue_confidence": "LOW",
+          "issue_text": "Possible SQL injection vector through string-based query construction.",
+          "line_number": 45
+        }
+      ]
+    }
+  },
+  "passed": false
+}

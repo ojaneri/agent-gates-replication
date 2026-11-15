@@ -1,0 +1,201 @@
+{
+  "wall_s": 22.8,
+  "returncode": 0,
+  "cli": {
+    "duration_api_ms": 17616,
+    "stop_reason": "end_turn",
+    "session_id": "anon-006011",
+    "total_cost_usd": 0.0725504,
+    "usage": {
+      "input_tokens": 6,
+      "cache_creation_input_tokens": 8117,
+      "cache_read_input_tokens": 126804,
+      "output_tokens": 2739,
+      "output_tokens_details": {
+        "thinking_tokens": 163
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 8117,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 368,
+          "cache_read_input_tokens": 44513,
+          "cache_creation_input_tokens": 2513,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 2513
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 2739,
+        "cacheReadInputTokens": 126804,
+        "cacheCreationInputTokens": 8117,
+        "webSearchRequests": 0,
+        "costUSD": 0.0725504,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 163,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8117,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 6,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "I implemented `RateLimiter` in `solution.py` to the spec, and the 16 tests in `tests/test_solution.py` pass with `python -m pytest -q tests`.\n\nIt keeps a per-client queue of accepted requests and drops entries once `now - t >= window`, so a request exactly one window old no longer counts. `allow` records a request only when it is accepted. `remaining` and `retry_after` record nothing. `retry_after` walks the client's active requests from oldest to newest until enough units would be freed, then returns the time until that request expires.\n\nInvalid `limit`, `window_seconds` or `cost` (including bools) raise `ValueError`. So does any call whose `now` is earlier than the latest `now` the limiter has seen, across all clients.\n\nThe tests cover constructor and cost validation, expiry at exactly one window, rejected requests using no budget, independent clients, costs above 1 with `retry_after`, and the time-went-backwards error on all three methods.\n\nOne choice the spec doesn't settle: a call with an invalid `cost` raises before the time check, so it doesn't advance the latest-time marker.",
+    "ttft_ms": 2140,
+    "type": "result",
+    "duration_ms": 21621,
+    "uuid": "anon-006012",
+    "ttft_stream_ms": 1781,
+    "time_to_request_ms": 250,
+    "time_to_request_phases_ms": {
+      "other": 5,
+      "system_prompt": 135,
+      "resume_other": 0,
+      "process_user_input": 3,
+      "input_attachments": 11,
+      "input_hooks": 2,
+      "conversation_append": 0,
+      "transcript_persist": 18,
+      "tool_pool_refresh": 4,
+      "init_message": 21,
+      "init_frame_send": 2,
+      "engine_pickup": 1,
+      "loop_entry": 3,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 1,
+      "request_announcements": 7,
+      "query_setup": 1,
+      "model_gates": 1,
+      "tool_schema_build": 17,
+      "message_normalization": 3,
+      "client_creation": 3,
+      "request_build": 10
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 19,
+    "time_to_request_cpu_ms": 329,
+    "time_to_request_major_faults": 12187,
+    "input_attachments_detail": {
+      "slowest_producer": "deferred_tools_delta",
+      "slowest_producer_ms": 1,
+      "cpu_ms": 0,
+      "major_faults": 712,
+      "setup_ms": 3,
+      "prompt_producers_ms": 0,
+      "ambient_start_ms": 4,
+      "ambient_wait_ms": 1,
+      "render_ms": 1,
+      "producers": 43,
+      "token_counts": 0
+    },
+    "tool_schema_build_detail": {
+      "betas_ms": 0,
+      "waits_ms": 1,
+      "placement_ms": 1,
+      "render_ms": 15,
+      "after_ms": 0,
+      "other_ms": 0,
+      "tools": 14,
+      "new_schemas": 14
+    },
+    "message_normalization_detail": {
+      "before_ms": 0,
+      "normalize_ms": 2,
+      "images_ms": 0,
+      "post_process_ms": 1,
+      "after_ms": 0,
+      "other_ms": 0,
+      "messages": 11,
+      "wire_messages": 2
+    },
+    "request_build_detail": {
+      "records_ms": 0,
+      "system_ms": 1,
+      "headers_ms": 1,
+      "cache_break_record_ms": 1,
+      "plans_ms": 1,
+      "retry_setup_ms": 0,
+      "sent_build_ms": 3,
+      "record_attempt_ms": 3,
+      "other_ms": 0,
+      "sent_build_safety_context_ms": 0,
+      "sent_build_cache_breakpoints_ms": 0,
+      "sent_build_surrogate_scan_ms": 1
+    },
+    "first_content_frame_ms": 1781,
+    "queued_turn_count": 0,
+    "result_index": 0,
+    "model_usage_since_last_result": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 2739,
+        "cacheReadInputTokens": 126804,
+        "cacheCreationInputTokens": 8117,
+        "webSearchRequests": 0,
+        "costUSD": 0.0725504,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 163,
+        "cacheCreationEphemeral5mInputTokens": 0,
+        "cacheCreationEphemeral1hInputTokens": 8117,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty"
+      }
+    }
+  },
+  "test_commands_attempted": 1,
+  "test_commands_denied": 0,
+  "denials": 0
+}

@@ -1,0 +1,88 @@
+[
+  {
+    "id": "F01",
+    "class": "security-adjacent",
+    "note": "LIKE wildcards in user input not escaped",
+    "edits": [
+      {
+        "find": "\"%\" + _escape_like(name_contains) + \"%\"",
+        "replace": "\"%\" + name_contains + \"%\""
+      }
+    ]
+  },
+  {
+    "id": "F02",
+    "class": "security",
+    "cwe": "CWE-89",
+    "note": "order_by interpolated without whitelist (SQL injection)",
+    "edits": [
+      {
+        "find": "    if order_by not in ORDER_COLUMNS:\n        raise ValueError(\"order_by must be 'name' or 'price'\")\n",
+        "replace": ""
+      },
+      {
+        "find": "\"ORDER BY\", ORDER_COLUMNS[order_by], direction",
+        "replace": "\"ORDER BY\", order_by, direction"
+      }
+    ]
+  },
+  {
+    "id": "F03",
+    "class": "boundary",
+    "note": "out-of-stock products included",
+    "edits": [
+      {
+        "find": "\"stock > 0\"",
+        "replace": "\"stock >= 0\""
+      }
+    ]
+  },
+  {
+    "id": "F04",
+    "class": "boundary",
+    "note": "max_price exclusive",
+    "edits": [
+      {
+        "find": "\"price <= ?\"",
+        "replace": "\"price < ?\""
+      }
+    ]
+  },
+  {
+    "id": "F05",
+    "class": "rule",
+    "note": "tie-break follows the descending flag",
+    "edits": [
+      {
+        "find": "\", id ASC LIMIT ? OFFSET ?\"]",
+        "replace": "\", id\", direction, \"LIMIT ? OFFSET ?\"]"
+      }
+    ]
+  },
+  {
+    "id": "F06",
+    "class": "rule",
+    "note": "case-sensitive substring match",
+    "edits": [
+      {
+        "find": "\"name LIKE ? ESCAPE '\\\\'\"",
+        "replace": "\"instr(name, ?) > 0\""
+      },
+      {
+        "find": "[\"%\" + _escape_like(name_contains) + \"%\"]",
+        "replace": "[name_contains]"
+      }
+    ]
+  },
+  {
+    "id": "F07",
+    "class": "validation",
+    "note": "limit upper bound not enforced",
+    "edits": [
+      {
+        "find": "not 1 <= limit <= 100",
+        "replace": "limit < 1"
+      }
+    ]
+  }
+]

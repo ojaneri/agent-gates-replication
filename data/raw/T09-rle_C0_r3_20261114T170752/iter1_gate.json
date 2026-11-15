@@ -1,0 +1,16 @@
+{
+  "condition": "C0",
+  "thresholds": {
+    "cov_min": 0.9,
+    "crap_max": 10.0,
+    "mut_min": 0.8
+  },
+  "gates": {
+    "tests": {
+      "passed": true,
+      "returncode": 0,
+      "tail": ".........................                                                [100%]\n25 passed in 0.02s"
+    }
+  },
+  "passed": true
+}
