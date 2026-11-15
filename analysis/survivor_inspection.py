@@ -1,4 +1,4 @@
-"""Inspection of the mutants that survived the C2 gate in the final round (todo t-0006, round-11 review).
+"""Inspection of the mutants that survived the C2 gate in the final round (todo t-0006, (post-run check).
 
 Each surviving mutant is rebuilt on the delivered module and classified by two independent checks:
   oracle-killed     the hidden oracle fails on the mutant: a real behaviour change the agent's tests missed

@@ -587,7 +587,7 @@ def main() -> None:
         up += k1 > k0; dn += k1 < k0
     m += [macro("rrTaskConeUp", up), macro("rrTaskConeDown", dn),
           macro("rrTaskConeP", f"{_bt(up, up + dn, 0.5).pvalue:.3f}" if up + dn else "--")]
-    # round-11 review: RQ3 per model (VR-QN05-01) and C2 first-round-only detection (VR-M07-01)
+    # (post-run check) and C2 first-round-only detection (VR-M07-01)
     from scipy.stats import fisher_exact as _fe2
     for model in sorted(wt["model"].unique()):
         key = MODEL_SHORT[model]
