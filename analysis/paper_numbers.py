@@ -603,6 +603,14 @@ def main() -> None:
     m += [macro("detCtwoFirst", fmt(c2f.mean(), pct=True)), macro("detCtwoFirstN", len(c2f)),
           macro("detCtwoFeedback", fmt(c2r.mean(), pct=True)), macro("detCtwoFeedbackN", len(c2r)),
           macro("detCzeroAll", fmt(wt[wt.condition == "C0"]["detect"].dropna().mean(), pct=True))]
+    si = PROC / "survivor_inspection.csv"
+    if si.exists():
+        sv = pd.read_csv(si)
+        m += [macro("survTotal", len(sv)), macro("survOracle", int((sv["class"] == "oracle-killed").sum())),
+              macro("survDiff", int((sv["class"] == "diff-divergent").sum())),
+              macro("survEquiv", int((sv["class"] == "no-difference").sum())),
+              macro("survReal", int(sv["class"].isin(["oracle-killed", "diff-divergent"]).sum())),
+              macro("survRuns", sv.loc[sv["class"].isin(["oracle-killed", "diff-divergent"]), "run_id"].nunique())]
     m.append(macro("costRatioHaiku", f"{100 * (df[(df.model == 'claude-haiku-5-5') & (df.condition == 'C2')]['cost'].mean() / df[(df.model == 'claude-haiku-5-5') & (df.condition == 'C0')]['cost'].mean() - 1):.0f}\\%"))
     m.append(macro("costRatioSonnet", f"{100 * (df[(df.model == 'claude-sonnet-5-5') & (df.condition == 'C2')]['cost'].mean() / df[(df.model == 'claude-sonnet-5-5') & (df.condition == 'C0')]['cost'].mean() - 1):.0f}\\%"))
 

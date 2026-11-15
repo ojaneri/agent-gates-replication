@@ -34,4 +34,18 @@ were not recorded, which is why this log was started. DBLP returned errors (HTTP
    2605.21810, 2606.05570, 2603.08806, 2604.01442, 2605.09573, 2409.10737, 2406.12952 (cited).
    Crossref title searches for 2606.17099 and 2610.33343 found no published versions.
 
-Limitation: ICSE/FSE/ASE/ISSTA 2026 proceedings were not searched directly; DBLP was unreachable.
+## 2026-11-15 (2026 proceedings through Crossref)
+
+6. DBLP search API: blocked by bot protection (Anubis); not used.
+7. Crossref works API, filter `from-pub-date:2026-01-01,type:proceedings-article`, first 40 hits each of
+   (a) "coding agents tests quality gates mutation coverage" and (b) "agent-written tests code review
+   replace human review LLM agents". Closest hits: Shaw and Beheshti, "Complexity Backpressure for AI
+   Coding Agents" (IEEE SSE 2026, 10.1109/SSE72781.2026.00047) and "Wily: High-Performance Complexity
+   Gated-Feedback for AI Coding Agents" (ACM CAIS 2026, 10.1145/3786335.3813220); abstracts read via the
+   Semantic Scholar API; both cited. Screened by title and judged not a controlled gate experiment with
+   an independent oracle: MSR 2026 studies of agent-written tests (10.1145/3793302.3793362,
+   10.1145/3793302.3793620), Debug2Fix (ASE 2026), SecMutBench, GEM (CIbSE 2026), and an iterative
+   static-analysis loop (CIACON 2026).
+
+Limitation: Crossref keyword search is not a full listing of the ICSE/FSE/ASE/ISSTA 2026 proceedings;
+DBLP was unreachable.

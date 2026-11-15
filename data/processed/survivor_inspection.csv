@@ -1,0 +1,72 @@
+run_id,task,model,line,mutation,code,class
+T01-coupons_C2_r1_20261114T122105,T01-coupons,claude-haiku-5-5,40,0 -> 1,if not 0 < value <= 100:,oracle-killed
+T01-coupons_C2_r1_20261114T122105,T01-coupons,claude-haiku-5-5,43,0 -> 1,if value <= 0:,oracle-killed
+T01-coupons_C2_r1_20261114T122210,T01-coupons,claude-sonnet-5-5,34,0 -> 1,if not 0 < value <= 100:,oracle-killed
+T01-coupons_C2_r1_20261114T122210,T01-coupons,claude-sonnet-5-5,37,0 -> 1,if value <= 0:,oracle-killed
+T01-coupons_C2_r2_20261114T121322,T01-coupons,claude-sonnet-5-5,34,0 -> 1,if not 0 < value <= 100:,oracle-killed
+T01-coupons_C2_r2_20261114T121322,T01-coupons,claude-sonnet-5-5,37,0 -> 1,if value <= 0:,oracle-killed
+T01-coupons_C2_r2_20261114T125804,T01-coupons,claude-haiku-5-5,47,0 -> 1,if value <= 0:,oracle-killed
+T01-coupons_C2_r3_20261114T122804,T01-coupons,claude-haiku-5-5,39,0 -> 1,if not Decimal(0) < value <= HUNDRED:,oracle-killed
+T01-coupons_C2_r3_20261114T122804,T01-coupons,claude-haiku-5-5,42,0 -> 1,if value <= 0:,oracle-killed
+T01-coupons_C2_r3_20261114T123101,T01-coupons,claude-sonnet-5-5,37,0 -> 1,if value <= 0:,oracle-killed
+T02-booking_C2_r1_20261114T122001,T02-booking,claude-sonnet-5-5,8,return value -> return None,return False,no-difference
+T02-booking_C2_r1_20261114T122001,T02-booking,claude-sonnet-5-5,19,return value -> return None,return False,oracle-killed
+T02-booking_C2_r1_20261114T122001,T02-booking,claude-sonnet-5-5,21,return value -> return None,return False,oracle-killed
+T02-booking_C2_r1_20261114T122001,T02-booking,claude-sonnet-5-5,23,return value -> return None,return False,oracle-killed
+T02-booking_C2_r1_20261114T122001,T02-booking,claude-sonnet-5-5,35,> -> >=,if e > result[-1][1]:,no-difference
+T02-booking_C2_r1_20261114T130132,T02-booking,claude-haiku-5-5,29,return value -> return None,return False,no-difference
+T02-booking_C2_r1_20261114T130132,T02-booking,claude-haiku-5-5,40,> -> >=,if interval_end > merged[-1][1]:,no-difference
+T02-booking_C2_r2_20261114T121928,T02-booking,claude-haiku-5-5,35,return value -> return None,return False,no-difference
+T02-booking_C2_r2_20261114T121928,T02-booking,claude-haiku-5-5,46,> -> >=,if end > merged[-1][1]:,no-difference
+T02-booking_C2_r2_20261114T122127,T02-booking,claude-sonnet-5-5,8,return value -> return None,return False,no-difference
+T02-booking_C2_r2_20261114T122127,T02-booking,claude-sonnet-5-5,19,return value -> return None,return False,oracle-killed
+T02-booking_C2_r2_20261114T122127,T02-booking,claude-sonnet-5-5,21,return value -> return None,return False,oracle-killed
+T02-booking_C2_r2_20261114T122127,T02-booking,claude-sonnet-5-5,23,return value -> return None,return False,oracle-killed
+T02-booking_C2_r2_20261114T122127,T02-booking,claude-sonnet-5-5,35,> -> >=,if e > merged[-1][1]:,no-difference
+T02-booking_C2_r3_20261114T122046,T02-booking,claude-sonnet-5-5,8,return value -> return None,return False,no-difference
+T02-booking_C2_r3_20261114T122046,T02-booking,claude-sonnet-5-5,34,<= -> <,if result and s <= result[-1][1]:,oracle-killed
+T02-booking_C2_r3_20261114T122046,T02-booking,claude-sonnet-5-5,35,> -> >=,if e > result[-1][1]:,no-difference
+T02-booking_C2_r3_20261114T125328,T02-booking,claude-haiku-5-5,17,return value -> return None,return False,no-difference
+T02-booking_C2_r3_20261114T125328,T02-booking,claude-haiku-5-5,19,return value -> return None,return False,no-difference
+T02-booking_C2_r3_20261114T125328,T02-booking,claude-haiku-5-5,30,return value -> return None,return False,no-difference
+T04-invoice_C2_r3_20261114T122619,T04-invoice,claude-sonnet-5-5,23,0 -> 1,"if not Decimal(0) <= line.get(""discount_pct"", Decimal(0)) <= HUNDRED:",no-difference
+T04-invoice_C2_r3_20261114T122619,T04-invoice,claude-sonnet-5-5,49,60 -> 61,ctx.prec = 60,no-difference
+T05-rate-limiter_C2_r1_20261114T124704,T05-rate-limiter,claude-sonnet-5-5,38,return value -> return None,return False,oracle-killed
+T05-rate-limiter_C2_r1_20261114T125612,T05-rate-limiter,claude-haiku-5-5,62,<= -> <,if needed <= 0:,no-difference
+T05-rate-limiter_C2_r2_20261114T124056,T05-rate-limiter,claude-sonnet-5-5,7,0 -> 1,if window_seconds <= 0:,oracle-killed
+T05-rate-limiter_C2_r2_20261114T124056,T05-rate-limiter,claude-sonnet-5-5,38,return value -> return None,return False,oracle-killed
+T05-rate-limiter_C2_r3_20261114T123903,T05-rate-limiter,claude-sonnet-5-5,7,0 -> 1,if window_seconds <= 0:,oracle-killed
+T05-rate-limiter_C2_r3_20261114T123903,T05-rate-limiter,claude-sonnet-5-5,40,return value -> return None,return False,oracle-killed
+T06-safe-extract_C2_r1_20261114T131156,T06-safe-extract,claude-haiku-5-5,11,0 -> 1,"if len(member) >= 2 and member[1] == "":"" and member[0].isascii() and member[0].isalpha():",no-difference
+T06-safe-extract_C2_r2_20261114T123600,T06-safe-extract,claude-sonnet-5-5,13,>= -> >,"if len(member) >= 2 and member[0] in string.ascii_letters and member[1] == "":"":",oracle-killed
+T06-safe-extract_C2_r2_20261114T123600,T06-safe-extract,claude-sonnet-5-5,13,2 -> 3,"if len(member) >= 2 and member[0] in string.ascii_letters and member[1] == "":"":",oracle-killed
+T06-safe-extract_C2_r3_20261114T122652,T06-safe-extract,claude-haiku-5-5,16,0 -> 1,"return len(name) >= 2 and name[1] == "":"" and name[0].isascii() and name[0].isalpha()",no-difference
+T07-password-policy_C2_r2_20261114T171430,T07-password-policy,claude-sonnet-5-5,51,or -> and,"if not isinstance(password, str) or not isinstance(username, str):",oracle-killed
+T07-password-policy_C2_r3_20261114T172947,T07-password-policy,claude-haiku-5-5,10,return value -> return None,"return ""0"" <= ch <= ""9""",oracle-killed
+T08-semver_C2_r1_20261114T171124,T08-semver,claude-sonnet-5-5,37,0 -> 1,"return _cmp(len(pb), len(pa)) if not (pa and pb) else 0",no-difference
+T08-semver_C2_r1_20261114T171855,T08-semver,claude-haiku-5-5,38,1 -> 2,"return (1, 0, ident)",no-difference
+T08-semver_C2_r1_20261114T171855,T08-semver,claude-haiku-5-5,38,0 -> 1,"return (1, 0, ident)",no-difference
+T08-semver_C2_r1_20261114T171855,T08-semver,claude-haiku-5-5,46,1 -> 2,"return core + (1, ())",no-difference
+T08-semver_C2_r2_20261114T172646,T08-semver,claude-sonnet-5-5,11,return value -> return None,return False,no-difference
+T08-semver_C2_r2_20261114T173753,T08-semver,claude-haiku-5-5,46,1 -> 2,"return (1, 0, ident)",no-difference
+T08-semver_C2_r2_20261114T173753,T08-semver,claude-haiku-5-5,46,0 -> 1,"return (1, 0, ident)",no-difference
+T08-semver_C2_r2_20261114T173753,T08-semver,claude-haiku-5-5,52,1 -> 2,"return numbers, 1, ()",no-difference
+T09-rle_C2_r2_20261114T172531,T09-rle,claude-haiku-5-5,30,- -> +,"raise ValueError(f""expected a count after '~' at index {i - 1}"")",no-difference
+T09-rle_C2_r2_20261114T172531,T09-rle,claude-haiku-5-5,30,1 -> 2,"raise ValueError(f""expected a count after '~' at index {i - 1}"")",no-difference
+T09-rle_C2_r3_20261114T165729,T09-rle,claude-haiku-5-5,36,1 -> 2,end = i + 1,no-difference
+T10-shipping_C2_r1_20261114T172733,T10-shipping,claude-sonnet-5-5,27,5000 -> 5001,volumetric = length * width * height / 5000,diff-divergent
+T10-shipping_C2_r2_20261114T164212,T10-shipping,claude-sonnet-5-5,18,5000 -> 5001,volumetric = dims[0] * dims[1] * dims[2] / Decimal(5000),diff-divergent
+T10-shipping_C2_r2_20261114T164354,T10-shipping,claude-haiku-5-5,65,60 -> 61,ctx.prec = 60,no-difference
+T10-shipping_C2_r3_20261114T171012,T10-shipping,claude-sonnet-5-5,27,5000 -> 5001,volumetric = dims[0] * dims[1] * dims[2] / Decimal(5000),diff-divergent
+T10-shipping_C2_r3_20261114T171723,T10-shipping,claude-haiku-5-5,58,<= -> <,if billable_kg <= 1:,no-difference
+T11-business-days_C2_r1_20261114T173641,T11-business-days,claude-haiku-5-5,47,> -> >=,step = timedelta(days=1 if n > 0 else -1),no-difference
+T11-business-days_C2_r2_20261114T165718,T11-business-days,claude-sonnet-5-5,38,> -> >=,step = timedelta(days=1 if n > 0 else -1),no-difference
+T11-business-days_C2_r2_20261114T170159,T11-business-days,claude-haiku-5-5,39,> -> >=,step = timedelta(days=1) if n > 0 else timedelta(days=-1),no-difference
+T11-business-days_C2_r3_20261114T165302,T11-business-days,claude-haiku-5-5,29,> -> >=,step = timedelta(days=1) if n > 0 else timedelta(days=-1),no-difference
+T12-csv-line_C2_r1_20261114T164351,T12-csv-line,claude-sonnet-5-5,6,< -> <=,if j < 0:,no-difference
+T12-csv-line_C2_r1_20261114T164351,T12-csv-line,claude-sonnet-5-5,6,0 -> 1,if j < 0:,no-difference
+T12-csv-line_C2_r1_20261114T164351,T12-csv-line,claude-sonnet-5-5,31,or -> and,"if not isinstance(line, str) or not isinstance(sep, str):",oracle-killed
+T12-csv-line_C2_r1_20261114T164612,T12-csv-line,claude-haiku-5-5,25,1 -> 2,"if i + 1 < n and line[i + 1] == '""':",no-difference
+T12-csv-line_C2_r2_20261114T165434,T12-csv-line,claude-haiku-5-5,14,1 -> 2,"if j + 1 < n and line[j + 1] == '""':",no-difference
+T12-csv-line_C2_r3_20261114T165929,T12-csv-line,claude-haiku-5-5,20,1 -> 2,"elif i + 1 < n and line[i + 1] == '""':",no-difference
+T12-csv-line_C2_r3_20261114T165929,T12-csv-line,claude-haiku-5-5,43,or -> and,"if not isinstance(line, str) or not isinstance(sep, str):",oracle-killed
